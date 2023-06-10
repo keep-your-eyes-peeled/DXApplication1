@@ -102,14 +102,14 @@ namespace DXApplication1
 
         private void barButtonItem2_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            /*SplashScreenManager.ShowForm(typeof(WaitForm1));
             form1 = new Form1();
             report.OpenExcelFile();
             form1.Report = report;            
             form1.MdiParent = this;
             form1.Show();
             
-            SplashScreenManager.CloseForm();
+            SplashScreenManager.CloseForm();*/
         }
     }
 }

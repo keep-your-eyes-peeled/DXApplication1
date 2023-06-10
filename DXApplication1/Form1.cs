@@ -339,7 +339,8 @@ namespace DXApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            textBox2.Text = report.FieldValues["ТабНом"];   
+            //textBox2.Text = report.FieldValues["ТабНом"];
+            //fieldValues["Тысячи"] = Worksheet.Range["AV11"].Value.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
