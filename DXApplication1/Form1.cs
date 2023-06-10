@@ -4,6 +4,8 @@ using ClassLibrary1;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Data;
+using DevExpress.ClipboardSource.SpreadsheetML;
+using DevExpress.XtraSplashScreen;
 
 namespace DXApplication1
 {    
@@ -22,8 +24,7 @@ namespace DXApplication1
         }
 
         public ClassLibrary1.Report GetReport()
-        {
-            
+        {            
             //Console.WriteLine(Сумма.Пропись((double)2340, Валюта.Рубли));
 
             DataSet1.STAFFDataTable staffTable = new DataSet1.STAFFDataTable();
@@ -338,12 +339,16 @@ namespace DXApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-                        
+            textBox2.Text = report.FieldValues["ТабНом"];   
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
             GetReport();
+            
+            SplashScreenManager.CloseForm();
+
         }
 
         private void Form1_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)

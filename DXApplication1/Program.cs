@@ -18,7 +18,7 @@ namespace DXApplication1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Glavn());
             Application.ApplicationExit += delegate {
                 foreach (Form f in Application.OpenForms)
                     f.Close();

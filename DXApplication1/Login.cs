@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using System.Diagnostics;
+using ClassLibrary1;
+using DevExpress.XtraSplashScreen;
+using EasyDox;
 
 namespace DXApplication1
 {
@@ -22,6 +25,9 @@ namespace DXApplication1
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            
+            
             if (textEdit1.Text.Length == 0 || textEdit2.Text.Length == 0)
             {
                 MessageBox.Show("Введите данные для авторизации!");
@@ -42,25 +48,7 @@ namespace DXApplication1
                         MessageBox.Show("Ошибка авторизации!");
                         break;
                 }
-                
-                /*if (this.dataSet11.USERS.CheckHashSum(this.dataSet11.OraConnection,
-                    this.dataSet11.GetStringHashSum(textEdit1.Text, textEdit2.Text)) == "Программист")
-                {
-                    Form1 form1 = new Form1();
-                    form1.Show();
-                    this.Hide();
-                }
-                else if (this.dataSet11.USERS.CheckHashSum(this.dataSet11.OraConnection,
-                    this.dataSet11.GetStringHashSum(textEdit1.Text, textEdit2.Text)) == "Бухгалтер")
-                {
-                    Form2 form2 = new Form2();
-                    form2.Show();
-                    this.Hide();
-                }*/
-                /*else
-                {
-                    MessageBox.Show("Ошибка авторизации!");
-                }*/
+                SplashScreenManager.CloseForm();
             }
         }
 
@@ -69,7 +57,7 @@ namespace DXApplication1
         private void Login_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
-            //this.Close();
+
         }
     }
 }
