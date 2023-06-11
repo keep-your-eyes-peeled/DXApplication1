@@ -8,6 +8,8 @@ namespace ClassLibrary1
 {
     partial class DataSet1
     {
+
+
         private string connString;
         public string ConnString
         {
@@ -93,6 +95,17 @@ namespace ClassLibrary1
                 using (DataSet1TableAdapters.STAFFTableAdapter ta = new DataSet1TableAdapters.STAFFTableAdapter())
                 {
                     ta.GlavBuh(this);
+                }
+            }
+        }
+
+        partial class REPORTSDataTable
+        {
+            public void Fill(OracleConnection OraConnection)
+            {
+                using (DataSet1TableAdapters.REPORTSTableAdapter ta = new DataSet1TableAdapters.REPORTSTableAdapter())
+                {
+                    ta.Fill(this);
                 }
             }
         }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,15 +20,28 @@ namespace DXApplication1
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog OFD = new OpenFileDialog();
+            /*OpenFileDialog OFD = new OpenFileDialog();
             if (OFD.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show(OFD.FileName);
+            }*/
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            this.dataSet11.REPORTS.Fill(this.dataSet11.MyOraConnection);
+        }
+
+        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            if (e.Column.Name == "colPATH")
+            {
+                Process.Start(e.CellValue.ToString());
             }
         }
     }
