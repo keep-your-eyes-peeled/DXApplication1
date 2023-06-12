@@ -70,6 +70,9 @@ namespace ClassLibrary1
             ConnString = CreateOracleConnectionString();
         }
 
+        partial class INCDOCDataTable
+        {
+        }
 
 
         partial class STAFFDataTable
@@ -99,6 +102,8 @@ namespace ClassLibrary1
             }
         }
 
+
+
         partial class REPORTSDataTable
         {
             public void Fill(OracleConnection OraConnection)
@@ -112,7 +117,6 @@ namespace ClassLibrary1
 
         partial class USERSDataTable
         {
-
             public bool FindByHash(OracleConnection OraConnection, string hashSum)
             {
                 using (DataSet1TableAdapters.USERSTableAdapter ta = new DataSet1TableAdapters.USERSTableAdapter())
@@ -143,6 +147,7 @@ namespace ClassLibrary1
                 }
             }
         }
+
     }
 }
 

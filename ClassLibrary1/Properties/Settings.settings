@@ -10,5 +10,13 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">DATA SOURCE=localhost;DBA PRIVILEGE=SYSDBA;TNS_ADMIN=D:\oracle\admin;PASSWORD=123456Qwer;PERSIST SECURITY INFO=True;USER ID=SYS</Value>
     </Setting>
+    <Setting Name="ConnectionString1" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&gt;
+  &lt;ConnectionString&gt;DATA SOURCE=localhost:1521/xe;TNS_ADMIN=C:\Users\mrcal\Oracle\network\admin;PASSWORD=admin;PERSIST SECURITY INFO=True;USER ID='"C##ADMIN"'&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;Oracle.ManagedDataAccess.Client&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">DATA SOURCE=localhost:1521/xe;TNS_ADMIN=C:\Users\mrcal\Oracle\network\admin;PASSWORD=admin;PERSIST SECURITY INFO=True;USER ID='"C##ADMIN"'</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
