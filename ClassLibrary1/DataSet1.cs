@@ -70,11 +70,11 @@ namespace ClassLibrary1
             ConnString = CreateOracleConnectionString();
         }
 
-        partial class INCDOCDataTable
+        partial class INCDOCSDataTable
         {
             public void Fill(OracleConnection OraConnection)
             {
-                using (DataSet1TableAdapters.INCDOCTableAdapter ta = new DataSet1TableAdapters.INCDOCTableAdapter())
+                using (DataSet1TableAdapters.INCDOCSTableAdapter ta = new DataSet1TableAdapters.INCDOCSTableAdapter())
                 {
                     ta.Fill(this);
                 }

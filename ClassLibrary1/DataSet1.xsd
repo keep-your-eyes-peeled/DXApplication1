@@ -104,7 +104,7 @@
               </DbSource>
             </Sources>
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="INCDOCTableAdapter" GeneratorDataComponentClassName="INCDOCTableAdapter" Name="INCDOC" UserDataComponentName="INCDOCTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="INCDOCSTableAdapter" GeneratorDataComponentClassName="INCDOCSTableAdapter" Name="INCDOCS" UserDataComponentName="INCDOCSTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="ConnectionString1 (Settings)" DbObjectName="&quot;C##ADMIN&quot;.INCDOC" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
@@ -289,32 +289,32 @@
   <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="STAFF" msprop:Generator_RowEvHandlerName="STAFFRowChangeEventHandler" msprop:Generator_RowDeletedName="STAFFRowDeleted" msprop:Generator_RowDeletingName="STAFFRowDeleting" msprop:Generator_RowEvArgName="STAFFRowChangeEvent" msprop:Generator_TablePropName="STAFF" msprop:Generator_RowChangedName="STAFFRowChanged" msprop:Generator_RowChangingName="STAFFRowChanging" msprop:Generator_TableClassName="STAFFDataTable" msprop:Generator_RowClassName="STAFFRow" msprop:Generator_TableVarName="tableSTAFF" msprop:Generator_UserTableName="STAFF">
+        <xs:element name="STAFF" msprop:Generator_RowClassName="STAFFRow" msprop:Generator_RowEvHandlerName="STAFFRowChangeEventHandler" msprop:Generator_RowDeletedName="STAFFRowDeleted" msprop:Generator_RowDeletingName="STAFFRowDeleting" msprop:Generator_RowEvArgName="STAFFRowChangeEvent" msprop:Generator_TablePropName="STAFF" msprop:Generator_RowChangedName="STAFFRowChanged" msprop:Generator_UserTableName="STAFF" msprop:Generator_RowChangingName="STAFFRowChanging" msprop:Generator_TableClassName="STAFFDataTable" msprop:Generator_TableVarName="tableSTAFF">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:long" />
-              <xs:element name="ENUM" msprop:Generator_ColumnPropNameInRow="ENUM" msprop:Generator_ColumnPropNameInTable="ENUMColumn" msprop:Generator_ColumnVarNameInTable="columnENUM" msprop:Generator_UserColumnName="ENUM" minOccurs="0">
+              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:long" />
+              <xs:element name="ENUM" msprop:Generator_UserColumnName="ENUM" msprop:Generator_ColumnPropNameInTable="ENUMColumn" msprop:Generator_ColumnPropNameInRow="ENUM" msprop:Generator_ColumnVarNameInTable="columnENUM" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="NAME" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_ColumnVarNameInTable="columnNAME" msprop:Generator_UserColumnName="NAME" minOccurs="0">
+              <xs:element name="NAME" msprop:Generator_UserColumnName="NAME" msprop:Generator_ColumnPropNameInTable="NAMEColumn" msprop:Generator_ColumnPropNameInRow="NAME" msprop:Generator_ColumnVarNameInTable="columnNAME" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="STRDIV" msprop:Generator_ColumnPropNameInRow="STRDIV" msprop:Generator_ColumnPropNameInTable="STRDIVColumn" msprop:Generator_ColumnVarNameInTable="columnSTRDIV" msprop:Generator_UserColumnName="STRDIV" minOccurs="0">
+              <xs:element name="STRDIV" msprop:Generator_UserColumnName="STRDIV" msprop:Generator_ColumnPropNameInTable="STRDIVColumn" msprop:Generator_ColumnPropNameInRow="STRDIV" msprop:Generator_ColumnVarNameInTable="columnSTRDIV" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="POST" msprop:Generator_ColumnPropNameInRow="POST" msprop:Generator_ColumnPropNameInTable="POSTColumn" msprop:Generator_ColumnVarNameInTable="columnPOST" msprop:Generator_UserColumnName="POST" minOccurs="0">
+              <xs:element name="POST" msprop:Generator_UserColumnName="POST" msprop:Generator_ColumnPropNameInTable="POSTColumn" msprop:Generator_ColumnPropNameInRow="POST" msprop:Generator_ColumnVarNameInTable="columnPOST" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -324,11 +324,11 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="INCDOC" msprop:Generator_RowEvHandlerName="INCDOCRowChangeEventHandler" msprop:Generator_RowDeletedName="INCDOCRowDeleted" msprop:Generator_RowDeletingName="INCDOCRowDeleting" msprop:Generator_RowEvArgName="INCDOCRowChangeEvent" msprop:Generator_TablePropName="INCDOC" msprop:Generator_RowChangedName="INCDOCRowChanged" msprop:Generator_RowChangingName="INCDOCRowChanging" msprop:Generator_TableClassName="INCDOCDataTable" msprop:Generator_RowClassName="INCDOCRow" msprop:Generator_TableVarName="tableINCDOC" msprop:Generator_UserTableName="INCDOC">
+        <xs:element name="INCDOCS" msprop:Generator_RowClassName="INCDOCSRow" msprop:Generator_RowEvHandlerName="INCDOCSRowChangeEventHandler" msprop:Generator_RowDeletedName="INCDOCSRowDeleted" msprop:Generator_RowDeletingName="INCDOCSRowDeleting" msprop:Generator_RowEvArgName="INCDOCSRowChangeEvent" msprop:Generator_TablePropName="INCDOCS" msprop:Generator_RowChangedName="INCDOCSRowChanged" msprop:Generator_UserTableName="INCDOCS" msprop:Generator_RowChangingName="INCDOCSRowChanging" msprop:Generator_TableClassName="INCDOCSDataTable" msprop:Generator_TableVarName="tableINCDOCS">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:long" />
-              <xs:element name="REPNUM" msprop:Generator_ColumnPropNameInRow="REPNUM" msprop:Generator_ColumnPropNameInTable="REPNUMColumn" msprop:Generator_ColumnVarNameInTable="columnREPNUM" msprop:Generator_UserColumnName="REPNUM">
+              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:long" />
+              <xs:element name="REPNUM" msprop:Generator_UserColumnName="REPNUM" msprop:Generator_ColumnPropNameInTable="REPNUMColumn" msprop:Generator_ColumnPropNameInRow="REPNUM" msprop:Generator_ColumnVarNameInTable="columnREPNUM">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
@@ -338,18 +338,18 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="REPORTS" msprop:Generator_RowEvHandlerName="REPORTSRowChangeEventHandler" msprop:Generator_RowDeletedName="REPORTSRowDeleted" msprop:Generator_RowDeletingName="REPORTSRowDeleting" msprop:Generator_RowEvArgName="REPORTSRowChangeEvent" msprop:Generator_TablePropName="REPORTS" msprop:Generator_RowChangedName="REPORTSRowChanged" msprop:Generator_RowChangingName="REPORTSRowChanging" msprop:Generator_TableClassName="REPORTSDataTable" msprop:Generator_RowClassName="REPORTSRow" msprop:Generator_TableVarName="tableREPORTS" msprop:Generator_UserTableName="REPORTS">
+        <xs:element name="REPORTS" msprop:Generator_RowClassName="REPORTSRow" msprop:Generator_RowEvHandlerName="REPORTSRowChangeEventHandler" msprop:Generator_RowDeletedName="REPORTSRowDeleted" msprop:Generator_RowDeletingName="REPORTSRowDeleting" msprop:Generator_RowEvArgName="REPORTSRowChangeEvent" msprop:Generator_TablePropName="REPORTS" msprop:Generator_RowChangedName="REPORTSRowChanged" msprop:Generator_UserTableName="REPORTS" msprop:Generator_RowChangingName="REPORTSRowChanging" msprop:Generator_TableClassName="REPORTSDataTable" msprop:Generator_TableVarName="tableREPORTS">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:long" />
-              <xs:element name="NUM" msprop:Generator_ColumnPropNameInRow="NUM" msprop:Generator_ColumnPropNameInTable="NUMColumn" msprop:Generator_ColumnVarNameInTable="columnNUM" msprop:Generator_UserColumnName="NUM" minOccurs="0">
+              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:long" />
+              <xs:element name="NUM" msprop:Generator_UserColumnName="NUM" msprop:Generator_ColumnPropNameInTable="NUMColumn" msprop:Generator_ColumnPropNameInRow="NUM" msprop:Generator_ColumnVarNameInTable="columnNUM" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PATH" msprop:Generator_ColumnPropNameInRow="PATH" msprop:Generator_ColumnPropNameInTable="PATHColumn" msprop:Generator_ColumnVarNameInTable="columnPATH" msprop:Generator_UserColumnName="PATH" minOccurs="0">
+              <xs:element name="PATH" msprop:Generator_UserColumnName="PATH" msprop:Generator_ColumnPropNameInTable="PATHColumn" msprop:Generator_ColumnPropNameInRow="PATH" msprop:Generator_ColumnVarNameInTable="columnPATH" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
@@ -359,18 +359,18 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="USERS" msprop:Generator_RowEvHandlerName="USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="USERSRowDeleted" msprop:Generator_RowDeletingName="USERSRowDeleting" msprop:Generator_RowEvArgName="USERSRowChangeEvent" msprop:Generator_TablePropName="USERS" msprop:Generator_RowChangedName="USERSRowChanged" msprop:Generator_RowChangingName="USERSRowChanging" msprop:Generator_TableClassName="USERSDataTable" msprop:Generator_RowClassName="USERSRow" msprop:Generator_TableVarName="tableUSERS" msprop:Generator_UserTableName="USERS">
+        <xs:element name="USERS" msprop:Generator_RowClassName="USERSRow" msprop:Generator_RowEvHandlerName="USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="USERSRowDeleted" msprop:Generator_RowDeletingName="USERSRowDeleting" msprop:Generator_RowEvArgName="USERSRowChangeEvent" msprop:Generator_TablePropName="USERS" msprop:Generator_RowChangedName="USERSRowChanged" msprop:Generator_UserTableName="USERS" msprop:Generator_RowChangingName="USERSRowChanging" msprop:Generator_TableClassName="USERSDataTable" msprop:Generator_TableVarName="tableUSERS">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_UserColumnName="ID" type="xs:long" />
-              <xs:element name="HESHSUM" msprop:Generator_ColumnPropNameInRow="HESHSUM" msprop:Generator_ColumnPropNameInTable="HESHSUMColumn" msprop:Generator_ColumnVarNameInTable="columnHESHSUM" msprop:Generator_UserColumnName="HESHSUM" minOccurs="0">
+              <xs:element name="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:long" />
+              <xs:element name="HESHSUM" msprop:Generator_UserColumnName="HESHSUM" msprop:Generator_ColumnPropNameInTable="HESHSUMColumn" msprop:Generator_ColumnPropNameInRow="HESHSUM" msprop:Generator_ColumnVarNameInTable="columnHESHSUM" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="POST" msprop:Generator_ColumnPropNameInRow="POST" msprop:Generator_ColumnPropNameInTable="POSTColumn" msprop:Generator_ColumnVarNameInTable="columnPOST" msprop:Generator_UserColumnName="POST" minOccurs="0">
+              <xs:element name="POST" msprop:Generator_UserColumnName="POST" msprop:Generator_ColumnPropNameInTable="POSTColumn" msprop:Generator_ColumnPropNameInRow="POST" msprop:Generator_ColumnVarNameInTable="columnPOST" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -380,14 +380,26 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="INCDOC" msprop:Generator_RowEvHandlerName="INCDOCRowChangeEventHandler" msprop:Generator_RowDeletedName="INCDOCRowDeleted" msprop:Generator_RowDeletingName="INCDOCRowDeleting" msprop:Generator_RowEvArgName="INCDOCRowChangeEvent" msprop:Generator_TablePropName="INCDOC" msprop:Generator_RowChangedName="INCDOCRowChanged" msprop:Generator_RowChangingName="INCDOCRowChanging" msprop:Generator_TableClassName="INCDOCDataTable" msprop:Generator_RowClassName="INCDOCRow" msprop:Generator_TableVarName="tableINCDOC" msprop:Generator_UserTableName="INCDOC">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Date" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_UserColumnName="Date" type="xs:string" minOccurs="0" />
+              <xs:element name="Number" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_UserColumnName="Number" type="xs:string" minOccurs="0" />
+              <xs:element name="Title" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_ColumnVarNameInTable="columnTitle" msprop:Generator_UserColumnName="Title" type="xs:string" minOccurs="0" />
+              <xs:element name="Sum1" msprop:Generator_ColumnPropNameInRow="Sum1" msprop:Generator_ColumnPropNameInTable="Sum1Column" msprop:Generator_ColumnVarNameInTable="columnSum1" msprop:Generator_UserColumnName="Sum1" type="xs:string" minOccurs="0" />
+              <xs:element name="Sum2" msprop:Generator_ColumnPropNameInRow="Sum2" msprop:Generator_ColumnPropNameInTable="Sum2Column" msprop:Generator_ColumnVarNameInTable="columnSum2" msprop:Generator_UserColumnName="Sum2" type="xs:string" minOccurs="0" />
+              <xs:element name="Debet" msprop:Generator_ColumnPropNameInRow="Debet" msprop:Generator_ColumnPropNameInTable="DebetColumn" msprop:Generator_ColumnVarNameInTable="columnDebet" msprop:Generator_UserColumnName="Debet" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:STAFF" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
-    <xs:unique name="INCDOC_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:INCDOC" />
+    <xs:unique name="INCDOCS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:INCDOCS" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
     <xs:unique name="REPORTS_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">

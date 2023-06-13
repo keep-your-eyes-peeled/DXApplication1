@@ -8,13 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using ClassLibrary1;
+using DevExpress.ChartRangeControlClient.Core;
 
 namespace DXApplication1
 {
     public partial class Form3 : Form
     {
-        private List<object> item;
-        public List<object> Item { get => item; set => item = value; }
+        public DataSet1.INCDOCDataTable IncDoc = new DataSet1.INCDOCDataTable();
         public Form3()
         {
             InitializeComponent();
@@ -32,8 +33,22 @@ namespace DXApplication1
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
-            Item = new List<object> { textEdit1.Text, textEdit2.Text, textEdit3.Text, 
-                textEdit5.Text, textEdit6.Text, textEdit4.Text};
+            bindingSource1.DataSource = this.IncDoc;
+            bindingSource1.AddNew();
+
+            DataSet1.INCDOCRow curRow = ((DataRowView)bindingSource1.Current).Row
+                as DataSet1.INCDOCRow;
+
+            curRow.Date = textEdit1.Text;
+            curRow.Number = textEdit2.Text;
+            curRow.Title = textEdit3.Text;
+            curRow.Sum1 = textEdit5.Text;
+            curRow.Sum2 = textEdit6.Text;
+            curRow.Debet = textEdit4.Text;
+
+            IncDoc.AddINCDOCRow(((DataSet1.INCDOCRow)((DataRowView)bindingSource1.Current).Row));
+            bindingSource1.EndEdit();
+
             this.Close();
         }
     }

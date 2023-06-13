@@ -26,11 +26,13 @@ namespace ClassLibrary1 {
         
         private STAFFDataTable tableSTAFF;
         
-        private INCDOCDataTable tableINCDOC;
+        private INCDOCSDataTable tableINCDOCS;
         
         private REPORTSDataTable tableREPORTS;
         
         private USERSDataTable tableUSERS;
+        
+        private INCDOCDataTable tableINCDOC;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -63,14 +65,17 @@ namespace ClassLibrary1 {
                 if ((ds.Tables["STAFF"] != null)) {
                     base.Tables.Add(new STAFFDataTable(ds.Tables["STAFF"]));
                 }
-                if ((ds.Tables["INCDOC"] != null)) {
-                    base.Tables.Add(new INCDOCDataTable(ds.Tables["INCDOC"]));
+                if ((ds.Tables["INCDOCS"] != null)) {
+                    base.Tables.Add(new INCDOCSDataTable(ds.Tables["INCDOCS"]));
                 }
                 if ((ds.Tables["REPORTS"] != null)) {
                     base.Tables.Add(new REPORTSDataTable(ds.Tables["REPORTS"]));
                 }
                 if ((ds.Tables["USERS"] != null)) {
                     base.Tables.Add(new USERSDataTable(ds.Tables["USERS"]));
+                }
+                if ((ds.Tables["INCDOC"] != null)) {
+                    base.Tables.Add(new INCDOCDataTable(ds.Tables["INCDOC"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -104,9 +109,9 @@ namespace ClassLibrary1 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public INCDOCDataTable INCDOC {
+        public INCDOCSDataTable INCDOCS {
             get {
-                return this.tableINCDOC;
+                return this.tableINCDOCS;
             }
         }
         
@@ -127,6 +132,16 @@ namespace ClassLibrary1 {
         public USERSDataTable USERS {
             get {
                 return this.tableUSERS;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public INCDOCDataTable INCDOC {
+            get {
+                return this.tableINCDOC;
             }
         }
         
@@ -200,14 +215,17 @@ namespace ClassLibrary1 {
                 if ((ds.Tables["STAFF"] != null)) {
                     base.Tables.Add(new STAFFDataTable(ds.Tables["STAFF"]));
                 }
-                if ((ds.Tables["INCDOC"] != null)) {
-                    base.Tables.Add(new INCDOCDataTable(ds.Tables["INCDOC"]));
+                if ((ds.Tables["INCDOCS"] != null)) {
+                    base.Tables.Add(new INCDOCSDataTable(ds.Tables["INCDOCS"]));
                 }
                 if ((ds.Tables["REPORTS"] != null)) {
                     base.Tables.Add(new REPORTSDataTable(ds.Tables["REPORTS"]));
                 }
                 if ((ds.Tables["USERS"] != null)) {
                     base.Tables.Add(new USERSDataTable(ds.Tables["USERS"]));
+                }
+                if ((ds.Tables["INCDOC"] != null)) {
+                    base.Tables.Add(new INCDOCDataTable(ds.Tables["INCDOC"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -248,10 +266,10 @@ namespace ClassLibrary1 {
                     this.tableSTAFF.InitVars();
                 }
             }
-            this.tableINCDOC = ((INCDOCDataTable)(base.Tables["INCDOC"]));
+            this.tableINCDOCS = ((INCDOCSDataTable)(base.Tables["INCDOCS"]));
             if ((initTable == true)) {
-                if ((this.tableINCDOC != null)) {
-                    this.tableINCDOC.InitVars();
+                if ((this.tableINCDOCS != null)) {
+                    this.tableINCDOCS.InitVars();
                 }
             }
             this.tableREPORTS = ((REPORTSDataTable)(base.Tables["REPORTS"]));
@@ -266,6 +284,12 @@ namespace ClassLibrary1 {
                     this.tableUSERS.InitVars();
                 }
             }
+            this.tableINCDOC = ((INCDOCDataTable)(base.Tables["INCDOC"]));
+            if ((initTable == true)) {
+                if ((this.tableINCDOC != null)) {
+                    this.tableINCDOC.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -278,12 +302,14 @@ namespace ClassLibrary1 {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableSTAFF = new STAFFDataTable();
             base.Tables.Add(this.tableSTAFF);
-            this.tableINCDOC = new INCDOCDataTable();
-            base.Tables.Add(this.tableINCDOC);
+            this.tableINCDOCS = new INCDOCSDataTable();
+            base.Tables.Add(this.tableINCDOCS);
             this.tableREPORTS = new REPORTSDataTable();
             base.Tables.Add(this.tableREPORTS);
             this.tableUSERS = new USERSDataTable();
             base.Tables.Add(this.tableUSERS);
+            this.tableINCDOC = new INCDOCDataTable();
+            base.Tables.Add(this.tableINCDOC);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -294,7 +320,7 @@ namespace ClassLibrary1 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private bool ShouldSerializeINCDOC() {
+        private bool ShouldSerializeINCDOCS() {
             return false;
         }
         
@@ -307,6 +333,12 @@ namespace ClassLibrary1 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private bool ShouldSerializeUSERS() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        private bool ShouldSerializeINCDOC() {
             return false;
         }
         
@@ -369,13 +401,16 @@ namespace ClassLibrary1 {
         public delegate void STAFFRowChangeEventHandler(object sender, STAFFRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public delegate void INCDOCRowChangeEventHandler(object sender, INCDOCRowChangeEvent e);
+        public delegate void INCDOCSRowChangeEventHandler(object sender, INCDOCSRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void REPORTSRowChangeEventHandler(object sender, REPORTSRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public delegate void USERSRowChangeEventHandler(object sender, USERSRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public delegate void INCDOCRowChangeEventHandler(object sender, INCDOCRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -700,7 +735,7 @@ namespace ClassLibrary1 {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class INCDOCDataTable : global::System.Data.TypedTableBase<INCDOCRow> {
+        public partial class INCDOCSDataTable : global::System.Data.TypedTableBase<INCDOCSRow> {
             
             private global::System.Data.DataColumn columnID;
             
@@ -708,8 +743,8 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public INCDOCDataTable() {
-                this.TableName = "INCDOC";
+            public INCDOCSDataTable() {
+                this.TableName = "INCDOCS";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -717,7 +752,7 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal INCDOCDataTable(global::System.Data.DataTable table) {
+            internal INCDOCSDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -734,7 +769,7 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            protected INCDOCDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected INCDOCSDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -766,53 +801,53 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public INCDOCRow this[int index] {
+            public INCDOCSRow this[int index] {
                 get {
-                    return ((INCDOCRow)(this.Rows[index]));
+                    return ((INCDOCSRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event INCDOCRowChangeEventHandler INCDOCRowChanging;
+            public event INCDOCSRowChangeEventHandler INCDOCSRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event INCDOCRowChangeEventHandler INCDOCRowChanged;
+            public event INCDOCSRowChangeEventHandler INCDOCSRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event INCDOCRowChangeEventHandler INCDOCRowDeleting;
+            public event INCDOCSRowChangeEventHandler INCDOCSRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public event INCDOCRowChangeEventHandler INCDOCRowDeleted;
+            public event INCDOCSRowChangeEventHandler INCDOCSRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void AddINCDOCRow(INCDOCRow row) {
+            public void AddINCDOCSRow(INCDOCSRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public INCDOCRow AddINCDOCRow(long ID, string REPNUM) {
-                INCDOCRow rowINCDOCRow = ((INCDOCRow)(this.NewRow()));
+            public INCDOCSRow AddINCDOCSRow(long ID, string REPNUM) {
+                INCDOCSRow rowINCDOCSRow = ((INCDOCSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         REPNUM};
-                rowINCDOCRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowINCDOCRow);
-                return rowINCDOCRow;
+                rowINCDOCSRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowINCDOCSRow);
+                return rowINCDOCSRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public INCDOCRow FindByID(long ID) {
-                return ((INCDOCRow)(this.Rows.Find(new object[] {
+            public INCDOCSRow FindByID(long ID) {
+                return ((INCDOCSRow)(this.Rows.Find(new object[] {
                             ID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                INCDOCDataTable cln = ((INCDOCDataTable)(base.Clone()));
+                INCDOCSDataTable cln = ((INCDOCSDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -820,7 +855,7 @@ namespace ClassLibrary1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new INCDOCDataTable();
+                return new INCDOCSDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -847,28 +882,28 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public INCDOCRow NewINCDOCRow() {
-                return ((INCDOCRow)(this.NewRow()));
+            public INCDOCSRow NewINCDOCSRow() {
+                return ((INCDOCSRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new INCDOCRow(builder);
+                return new INCDOCSRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(INCDOCRow);
+                return typeof(INCDOCSRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.INCDOCRowChanged != null)) {
-                    this.INCDOCRowChanged(this, new INCDOCRowChangeEvent(((INCDOCRow)(e.Row)), e.Action));
+                if ((this.INCDOCSRowChanged != null)) {
+                    this.INCDOCSRowChanged(this, new INCDOCSRowChangeEvent(((INCDOCSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -876,8 +911,8 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.INCDOCRowChanging != null)) {
-                    this.INCDOCRowChanging(this, new INCDOCRowChangeEvent(((INCDOCRow)(e.Row)), e.Action));
+                if ((this.INCDOCSRowChanging != null)) {
+                    this.INCDOCSRowChanging(this, new INCDOCSRowChangeEvent(((INCDOCSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -885,8 +920,8 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.INCDOCRowDeleted != null)) {
-                    this.INCDOCRowDeleted(this, new INCDOCRowChangeEvent(((INCDOCRow)(e.Row)), e.Action));
+                if ((this.INCDOCSRowDeleted != null)) {
+                    this.INCDOCSRowDeleted(this, new INCDOCSRowChangeEvent(((INCDOCSRow)(e.Row)), e.Action));
                 }
             }
             
@@ -894,14 +929,14 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.INCDOCRowDeleting != null)) {
-                    this.INCDOCRowDeleting(this, new INCDOCRowChangeEvent(((INCDOCRow)(e.Row)), e.Action));
+                if ((this.INCDOCSRowDeleting != null)) {
+                    this.INCDOCSRowDeleting(this, new INCDOCSRowChangeEvent(((INCDOCSRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void RemoveINCDOCRow(INCDOCRow row) {
+            public void RemoveINCDOCSRow(INCDOCSRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -928,7 +963,7 @@ namespace ClassLibrary1 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "INCDOCDataTable";
+                attribute2.FixedValue = "INCDOCSDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1546,6 +1581,323 @@ namespace ClassLibrary1 {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class INCDOCDataTable : global::System.Data.TypedTableBase<INCDOCRow> {
+            
+            private global::System.Data.DataColumn columnDate;
+            
+            private global::System.Data.DataColumn columnNumber;
+            
+            private global::System.Data.DataColumn columnTitle;
+            
+            private global::System.Data.DataColumn columnSum1;
+            
+            private global::System.Data.DataColumn columnSum2;
+            
+            private global::System.Data.DataColumn columnDebet;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public INCDOCDataTable() {
+                this.TableName = "INCDOC";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal INCDOCDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected INCDOCDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DateColumn {
+                get {
+                    return this.columnDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn NumberColumn {
+                get {
+                    return this.columnNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TitleColumn {
+                get {
+                    return this.columnTitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Sum1Column {
+                get {
+                    return this.columnSum1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn Sum2Column {
+                get {
+                    return this.columnSum2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DebetColumn {
+                get {
+                    return this.columnDebet;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public INCDOCRow this[int index] {
+                get {
+                    return ((INCDOCRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event INCDOCRowChangeEventHandler INCDOCRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event INCDOCRowChangeEventHandler INCDOCRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event INCDOCRowChangeEventHandler INCDOCRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public event INCDOCRowChangeEventHandler INCDOCRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void AddINCDOCRow(INCDOCRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public INCDOCRow AddINCDOCRow(string Date, string Number, string Title, string Sum1, string Sum2, string Debet) {
+                INCDOCRow rowINCDOCRow = ((INCDOCRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Date,
+                        Number,
+                        Title,
+                        Sum1,
+                        Sum2,
+                        Debet};
+                rowINCDOCRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowINCDOCRow);
+                return rowINCDOCRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                INCDOCDataTable cln = ((INCDOCDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new INCDOCDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal void InitVars() {
+                this.columnDate = base.Columns["Date"];
+                this.columnNumber = base.Columns["Number"];
+                this.columnTitle = base.Columns["Title"];
+                this.columnSum1 = base.Columns["Sum1"];
+                this.columnSum2 = base.Columns["Sum2"];
+                this.columnDebet = base.Columns["Debet"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            private void InitClass() {
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
+                this.columnNumber = new global::System.Data.DataColumn("Number", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNumber);
+                this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTitle);
+                this.columnSum1 = new global::System.Data.DataColumn("Sum1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSum1);
+                this.columnSum2 = new global::System.Data.DataColumn("Sum2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSum2);
+                this.columnDebet = new global::System.Data.DataColumn("Debet", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDebet);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public INCDOCRow NewINCDOCRow() {
+                return ((INCDOCRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new INCDOCRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(INCDOCRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.INCDOCRowChanged != null)) {
+                    this.INCDOCRowChanged(this, new INCDOCRowChangeEvent(((INCDOCRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.INCDOCRowChanging != null)) {
+                    this.INCDOCRowChanging(this, new INCDOCRowChangeEvent(((INCDOCRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.INCDOCRowDeleted != null)) {
+                    this.INCDOCRowDeleted(this, new INCDOCRowChangeEvent(((INCDOCRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.INCDOCRowDeleting != null)) {
+                    this.INCDOCRowDeleting(this, new INCDOCRowChangeEvent(((INCDOCRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void RemoveINCDOCRow(INCDOCRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "INCDOCDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class STAFFRow : global::System.Data.DataRow {
@@ -1686,25 +2038,25 @@ namespace ClassLibrary1 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class INCDOCRow : global::System.Data.DataRow {
+        public partial class INCDOCSRow : global::System.Data.DataRow {
             
-            private INCDOCDataTable tableINCDOC;
+            private INCDOCSDataTable tableINCDOCS;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            internal INCDOCRow(global::System.Data.DataRowBuilder rb) : 
+            internal INCDOCSRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableINCDOC = ((INCDOCDataTable)(this.Table));
+                this.tableINCDOCS = ((INCDOCSDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public long ID {
                 get {
-                    return ((long)(this[this.tableINCDOC.IDColumn]));
+                    return ((long)(this[this.tableINCDOCS.IDColumn]));
                 }
                 set {
-                    this[this.tableINCDOC.IDColumn] = value;
+                    this[this.tableINCDOCS.IDColumn] = value;
                 }
             }
             
@@ -1712,10 +2064,10 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string REPNUM {
                 get {
-                    return ((string)(this[this.tableINCDOC.REPNUMColumn]));
+                    return ((string)(this[this.tableINCDOCS.REPNUMColumn]));
                 }
                 set {
-                    this[this.tableINCDOC.REPNUMColumn] = value;
+                    this[this.tableINCDOCS.REPNUMColumn] = value;
                 }
             }
         }
@@ -1885,6 +2237,189 @@ namespace ClassLibrary1 {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class INCDOCRow : global::System.Data.DataRow {
+            
+            private INCDOCDataTable tableINCDOC;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            internal INCDOCRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableINCDOC = ((INCDOCDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Date {
+                get {
+                    try {
+                        return ((string)(this[this.tableINCDOC.DateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Date\' в таблице \'INCDOC\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINCDOC.DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Number {
+                get {
+                    try {
+                        return ((string)(this[this.tableINCDOC.NumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Number\' в таблице \'INCDOC\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINCDOC.NumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Title {
+                get {
+                    try {
+                        return ((string)(this[this.tableINCDOC.TitleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Title\' в таблице \'INCDOC\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINCDOC.TitleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Sum1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableINCDOC.Sum1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Sum1\' в таблице \'INCDOC\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINCDOC.Sum1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Sum2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableINCDOC.Sum2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Sum2\' в таблице \'INCDOC\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINCDOC.Sum2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Debet {
+                get {
+                    try {
+                        return ((string)(this[this.tableINCDOC.DebetColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Debet\' в таблице \'INCDOC\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableINCDOC.DebetColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDateNull() {
+                return this.IsNull(this.tableINCDOC.DateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDateNull() {
+                this[this.tableINCDOC.DateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsNumberNull() {
+                return this.IsNull(this.tableINCDOC.NumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetNumberNull() {
+                this[this.tableINCDOC.NumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTitleNull() {
+                return this.IsNull(this.tableINCDOC.TitleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTitleNull() {
+                this[this.tableINCDOC.TitleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSum1Null() {
+                return this.IsNull(this.tableINCDOC.Sum1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSum1Null() {
+                this[this.tableINCDOC.Sum1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsSum2Null() {
+                return this.IsNull(this.tableINCDOC.Sum2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetSum2Null() {
+                this[this.tableINCDOC.Sum2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDebetNull() {
+                return this.IsNull(this.tableINCDOC.DebetColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDebetNull() {
+                this[this.tableINCDOC.DebetColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -1922,22 +2457,22 @@ namespace ClassLibrary1 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public class INCDOCRowChangeEvent : global::System.EventArgs {
+        public class INCDOCSRowChangeEvent : global::System.EventArgs {
             
-            private INCDOCRow eventRow;
+            private INCDOCSRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public INCDOCRowChangeEvent(INCDOCRow row, global::System.Data.DataRowAction action) {
+            public INCDOCSRowChangeEvent(INCDOCSRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public INCDOCRow Row {
+            public INCDOCSRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2006,6 +2541,40 @@ namespace ClassLibrary1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public USERSRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        public class INCDOCRowChangeEvent : global::System.EventArgs {
+            
+            private INCDOCRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public INCDOCRowChangeEvent(INCDOCRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public INCDOCRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2770,7 +3339,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class INCDOCTableAdapter : global::System.ComponentModel.Component {
+    public partial class INCDOCSTableAdapter : global::System.ComponentModel.Component {
         
         private global::Oracle.ManagedDataAccess.Client.OracleDataAdapter _adapter;
         
@@ -2784,7 +3353,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public INCDOCTableAdapter() {
+        public INCDOCSTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2881,7 +3450,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             this._adapter = new global::Oracle.ManagedDataAccess.Client.OracleDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "INCDOC";
+            tableMapping.DataSetTable = "INCDOCS";
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("REPNUM", "REPNUM");
             this._adapter.TableMappings.Add(tableMapping);
@@ -2986,7 +3555,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.INCDOCDataTable dataTable) {
+        public virtual int Fill(DataSet1.INCDOCSDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2999,9 +3568,9 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.INCDOCDataTable GetData() {
+        public virtual DataSet1.INCDOCSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.INCDOCDataTable dataTable = new DataSet1.INCDOCDataTable();
+            DataSet1.INCDOCSDataTable dataTable = new DataSet1.INCDOCSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3009,7 +3578,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.INCDOCDataTable dataTable) {
+        public virtual int Update(DataSet1.INCDOCSDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -3017,7 +3586,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "INCDOC");
+            return this.Adapter.Update(dataSet, "INCDOCS");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4200,7 +4769,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         
         private STAFFTableAdapter _sTAFFTableAdapter;
         
-        private INCDOCTableAdapter _iNCDOCTableAdapter;
+        private INCDOCSTableAdapter _iNCDOCSTableAdapter;
         
         private REPORTSTableAdapter _rEPORTSTableAdapter;
         
@@ -4240,12 +4809,12 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public INCDOCTableAdapter INCDOCTableAdapter {
+        public INCDOCSTableAdapter INCDOCSTableAdapter {
             get {
-                return this._iNCDOCTableAdapter;
+                return this._iNCDOCSTableAdapter;
             }
             set {
-                this._iNCDOCTableAdapter = value;
+                this._iNCDOCSTableAdapter = value;
             }
         }
         
@@ -4300,9 +4869,9 @@ namespace ClassLibrary1.DataSet1TableAdapters {
                             && (this._sTAFFTableAdapter.Connection != null))) {
                     return this._sTAFFTableAdapter.Connection;
                 }
-                if (((this._iNCDOCTableAdapter != null) 
-                            && (this._iNCDOCTableAdapter.Connection != null))) {
-                    return this._iNCDOCTableAdapter.Connection;
+                if (((this._iNCDOCSTableAdapter != null) 
+                            && (this._iNCDOCSTableAdapter.Connection != null))) {
+                    return this._iNCDOCSTableAdapter.Connection;
                 }
                 if (((this._rEPORTSTableAdapter != null) 
                             && (this._rEPORTSTableAdapter.Connection != null))) {
@@ -4328,7 +4897,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
                 if ((this._sTAFFTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._iNCDOCTableAdapter != null)) {
+                if ((this._iNCDOCSTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._rEPORTSTableAdapter != null)) {
@@ -4357,12 +4926,12 @@ namespace ClassLibrary1.DataSet1TableAdapters {
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._iNCDOCTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.INCDOC.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._iNCDOCSTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.INCDOCS.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._iNCDOCTableAdapter.Update(updatedRows));
+                    result = (result + this._iNCDOCSTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4402,11 +4971,11 @@ namespace ClassLibrary1.DataSet1TableAdapters {
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._iNCDOCTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.INCDOC.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._iNCDOCSTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.INCDOCS.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._iNCDOCTableAdapter.Update(addedRows));
+                    result = (result + this._iNCDOCSTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4452,11 +5021,11 @@ namespace ClassLibrary1.DataSet1TableAdapters {
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._iNCDOCTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.INCDOC.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._iNCDOCSTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.INCDOCS.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._iNCDOCTableAdapter.Update(deletedRows));
+                    result = (result + this._iNCDOCSTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4512,8 +5081,8 @@ namespace ClassLibrary1.DataSet1TableAdapters {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
-            if (((this._iNCDOCTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._iNCDOCTableAdapter.Connection) == false))) {
+            if (((this._iNCDOCSTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._iNCDOCSTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -4568,13 +5137,13 @@ namespace ClassLibrary1.DataSet1TableAdapters {
                         adaptersWithAcceptChangesDuringUpdate.Add(this._sTAFFTableAdapter.Adapter);
                     }
                 }
-                if ((this._iNCDOCTableAdapter != null)) {
-                    revertConnections.Add(this._iNCDOCTableAdapter, this._iNCDOCTableAdapter.Connection);
-                    this._iNCDOCTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
-                    this._iNCDOCTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
-                    if (this._iNCDOCTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._iNCDOCTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._iNCDOCTableAdapter.Adapter);
+                if ((this._iNCDOCSTableAdapter != null)) {
+                    revertConnections.Add(this._iNCDOCSTableAdapter, this._iNCDOCSTableAdapter.Connection);
+                    this._iNCDOCSTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(workConnection));
+                    this._iNCDOCSTableAdapter.Transaction = ((global::Oracle.ManagedDataAccess.Client.OracleTransaction)(workTransaction));
+                    if (this._iNCDOCSTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._iNCDOCSTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._iNCDOCSTableAdapter.Adapter);
                     }
                 }
                 if ((this._rEPORTSTableAdapter != null)) {
@@ -4657,9 +5226,9 @@ namespace ClassLibrary1.DataSet1TableAdapters {
                     this._sTAFFTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._sTAFFTableAdapter]));
                     this._sTAFFTableAdapter.Transaction = null;
                 }
-                if ((this._iNCDOCTableAdapter != null)) {
-                    this._iNCDOCTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._iNCDOCTableAdapter]));
-                    this._iNCDOCTableAdapter.Transaction = null;
+                if ((this._iNCDOCSTableAdapter != null)) {
+                    this._iNCDOCSTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._iNCDOCSTableAdapter]));
+                    this._iNCDOCSTableAdapter.Transaction = null;
                 }
                 if ((this._rEPORTSTableAdapter != null)) {
                     this._rEPORTSTableAdapter.Connection = ((global::Oracle.ManagedDataAccess.Client.OracleConnection)(revertConnections[this._rEPORTSTableAdapter]));

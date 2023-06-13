@@ -8,6 +8,7 @@ using DevExpress.ClipboardSource.SpreadsheetML;
 using DevExpress.XtraSplashScreen;
 using System.Windows.Forms;
 using DevExpress.ChartRangeControlClient.Core;
+using DevExpress.XtraSpellChecker.Parser;
 
 namespace DXApplication1
 {    
@@ -352,6 +353,7 @@ namespace DXApplication1
             SplashScreenManager.ShowForm(typeof(WaitForm1));
 
 
+
             GetReport();
             
             SplashScreenManager.CloseForm();
@@ -371,20 +373,9 @@ namespace DXApplication1
             
             Form3 form3 = new Form3();
             form3.ShowDialog();
-            List<object> item = form3.Item;
-            bindingSource1.AddNew();
-            MessageBox.Show(((DataGridViewRow)bindingSource1[0]).Cells.Count.ToString());
 
-            //MessageBox.Show(((System.Data.DataRowView)(bindingSource1.)).Row.ItemArray.Length.ToString());
-            //
-            //bindingSource1.MoveLast();
-            //MessageBox.Show(((System.Data.DataRowView)(bindingSource1.Current)).Row.ItemArray.Length.ToString());
-            //MessageBox.Show(form3.Item.Length.ToString());
-
-            //((System.Data.DataRowView)(bindingSource1.Current)).Row.ItemArray = form3.Item;
-
-
-
+            this.dataSet11.INCDOC.Merge(form3.IncDoc);
+            MessageBox.Show(this.dataSet11.INCDOC.Rows[0][0].ToString());
             SplashScreenManager.CloseForm();
             
         }
