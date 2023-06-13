@@ -114,7 +114,11 @@ namespace DXApplication1
 
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            Form2 form2 = new Form2();
+            form2.MdiParent = this;
+            form2.Show();
+            SplashScreenManager.CloseForm();
         }
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

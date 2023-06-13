@@ -72,6 +72,13 @@ namespace ClassLibrary1
 
         partial class INCDOCDataTable
         {
+            public void Fill(OracleConnection OraConnection)
+            {
+                using (DataSet1TableAdapters.INCDOCTableAdapter ta = new DataSet1TableAdapters.INCDOCTableAdapter())
+                {
+                    ta.Fill(this);
+                }
+            }
         }
 
 

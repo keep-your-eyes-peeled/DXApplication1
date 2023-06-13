@@ -6,14 +6,18 @@ using System.Text.RegularExpressions;
 using System.Data;
 using DevExpress.ClipboardSource.SpreadsheetML;
 using DevExpress.XtraSplashScreen;
+using System.Windows.Forms;
+using DevExpress.ChartRangeControlClient.Core;
 
 namespace DXApplication1
 {    
     public partial class Form1 : DevExpress.XtraEditors.XtraForm
     {
+        
         private ClassLibrary1.Report report;
 
         public Report Report { get => report; set => report = value; }
+        
 
         //public Dictionary<string, string> fieldValues;
 
@@ -346,6 +350,8 @@ namespace DXApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             SplashScreenManager.ShowForm(typeof(WaitForm1));
+
+
             GetReport();
             
             SplashScreenManager.CloseForm();
@@ -361,7 +367,26 @@ namespace DXApplication1
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            
+            Form3 form3 = new Form3();
+            form3.ShowDialog();
+            List<object> item = form3.Item;
             bindingSource1.AddNew();
+            MessageBox.Show(((DataGridViewRow)bindingSource1[0]).Cells.Count.ToString());
+
+            //MessageBox.Show(((System.Data.DataRowView)(bindingSource1.)).Row.ItemArray.Length.ToString());
+            //
+            //bindingSource1.MoveLast();
+            //MessageBox.Show(((System.Data.DataRowView)(bindingSource1.Current)).Row.ItemArray.Length.ToString());
+            //MessageBox.Show(form3.Item.Length.ToString());
+
+            //((System.Data.DataRowView)(bindingSource1.Current)).Row.ItemArray = form3.Item;
+
+
+
+            SplashScreenManager.CloseForm();
+            
         }
     }
     
