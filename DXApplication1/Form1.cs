@@ -278,15 +278,15 @@ namespace DXApplication1
             foreach (DataRowView DRrow in rows)
             {
                 float _sum = 0;
-                if (!sch.ContainsValue(DRrow[6].ToString()))
+                if (!sch.ContainsValue(DRrow[5].ToString()))
                 {
-                    sch.Add("Сч" + _counter, DRrow[6].ToString());
-                    sch.Add("Сч" + (_counter + 8), DRrow[6].ToString() + "0");
+                    sch.Add("Сч" + _counter, DRrow[5].ToString());
+                    sch.Add("Сч" + (_counter + 8), DRrow[5].ToString() + "0");
                     foreach (System.Data.DataRowView dataRow in bindingSource1)
                     {
-                        if (dataRow.Row.ItemArray[6].ToString() == sch["Сч" + _counter])
+                        if (dataRow.Row.ItemArray[5].ToString() == sch["Сч" + _counter])
                         {
-                            _sum += float.Parse(dataRow.Row.ItemArray[4].ToString());
+                            _sum += float.Parse(dataRow.Row.ItemArray[3].ToString());
                         }
                     }
                     sch.Add("Сум" + _counter, _sum.ToString());
@@ -295,14 +295,14 @@ namespace DXApplication1
                 }
                 _sum = 0;
                 dict.Add("пп" + counter, counter.ToString());
-                dict.Add("д" + counter, DRrow[1].ToString());
-                dict.Add("нн" + counter, DRrow[2].ToString());
-                dict.Add("нд" + counter, DRrow[3].ToString());
-                dict.Add("по" + counter, DRrow[4].ToString());
+                dict.Add("д" + counter, DRrow[0].ToString());
+                dict.Add("нн" + counter, DRrow[1].ToString());
+                dict.Add("нд" + counter, DRrow[2].ToString());
+                dict.Add("по" + counter, DRrow[3].ToString());
                 dict.Add("пов" + counter, "0");
-                dict.Add("пк" + counter, DRrow[5].ToString());
+                dict.Add("пк" + counter, DRrow[4].ToString());
                 dict.Add("пкв" + counter, "0");
-                dict.Add("дс" + counter, DRrow[6].ToString());
+                dict.Add("дс" + counter, DRrow[5].ToString());
                 counter++;
             }
 
@@ -355,6 +355,8 @@ namespace DXApplication1
 
 
             GetReport();
+            this.dataSet11.INCDOCS.Update(this.dataSet11.MyOraConnection);
+
             
             SplashScreenManager.CloseForm();
 
@@ -371,11 +373,12 @@ namespace DXApplication1
         {
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             
-            Form3 form3 = new Form3();
+            Form3 form3 = new Form3(textBox1.Text);
             form3.ShowDialog();
 
             this.dataSet11.INCDOC.Merge(form3.IncDoc);
-            MessageBox.Show(this.dataSet11.INCDOC.Rows[0][0].ToString());
+            this.dataSet11.INCDOCS.Merge(form3.docs);
+
             SplashScreenManager.CloseForm();
             
         }

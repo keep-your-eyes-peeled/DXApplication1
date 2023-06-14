@@ -79,6 +79,14 @@ namespace ClassLibrary1
                     ta.Fill(this);
                 }
             }
+
+            public void Update(OracleConnection OraConnection)
+            {
+                using (DataSet1TableAdapters.INCDOCSTableAdapter ta = new DataSet1TableAdapters.INCDOCSTableAdapter())
+                {
+                    ta.Update(this);
+                }
+            }
         }
 
 

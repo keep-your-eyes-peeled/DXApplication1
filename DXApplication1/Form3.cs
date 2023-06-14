@@ -16,9 +16,12 @@ namespace DXApplication1
     public partial class Form3 : Form
     {
         public DataSet1.INCDOCDataTable IncDoc = new DataSet1.INCDOCDataTable();
-        public Form3()
+        public DataSet1.INCDOCSDataTable docs = new DataSet1.INCDOCSDataTable();
+        string repnum = "";
+        public Form3(string _repnum)
         {
             InitializeComponent();
+            this.repnum = _repnum;
         }
 
 
@@ -33,11 +36,27 @@ namespace DXApplication1
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
+            System.Windows.Forms.BindingSource bs2 = new System.Windows.Forms.BindingSource();
+            bs2.DataSource = this.docs;
+            bs2.AddNew();
+
+            DataSet1.INCDOCSRow docsRow = ((DataRowView)bs2.Current).Row
+                as DataSet1.INCDOCSRow;
+
+            docsRow.PATH = labelControl1.Text;
+            docsRow.REPNUM = this.repnum;
+
+
+            docs.AddINCDOCSRow(((DataSet1.INCDOCSRow)((DataRowView)bs2.Current).Row));
+            bs2.EndEdit();
+
             bindingSource1.DataSource = this.IncDoc;
             bindingSource1.AddNew();
 
             DataSet1.INCDOCRow curRow = ((DataRowView)bindingSource1.Current).Row
                 as DataSet1.INCDOCRow;
+
+            
 
             curRow.Date = textEdit1.Text;
             curRow.Number = textEdit2.Text;
