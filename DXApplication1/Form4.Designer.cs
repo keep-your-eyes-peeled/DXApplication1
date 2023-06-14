@@ -1,6 +1,6 @@
 ﻿namespace DXApplication1
 {
-    partial class Form2
+    partial class Form4
     {
         /// <summary>
         /// Required designer variable.
@@ -35,11 +35,10 @@
             this.dataSet11 = new ClassLibrary1.DataSet1();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNUM = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colREPNUM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPATH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DXApplication1.WaitForm1), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -58,7 +57,7 @@
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.Root;
             this.layoutControl1.Size = new System.Drawing.Size(800, 450);
-            this.layoutControl1.TabIndex = 1;
+            this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
             // gridControl1
@@ -74,7 +73,7 @@
             // 
             // bindingSource1
             // 
-            this.bindingSource1.DataMember = "REPORTS";
+            this.bindingSource1.DataMember = "INCDOCS";
             this.bindingSource1.DataSource = this.dataSet11;
             // 
             // dataSet11
@@ -87,33 +86,30 @@
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colID,
-            this.colNUM,
+            this.colREPNUM,
             this.colPATH});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             // 
             // colID
             // 
             this.colID.FieldName = "ID";
             this.colID.Name = "colID";
             // 
-            // colNUM
+            // colREPNUM
             // 
-            this.colNUM.Caption = "Номер отчета";
-            this.colNUM.FieldName = "NUM";
-            this.colNUM.Name = "colNUM";
-            this.colNUM.OptionsColumn.AllowEdit = false;
-            this.colNUM.Visible = true;
-            this.colNUM.VisibleIndex = 0;
+            this.colREPNUM.Caption = "Относится к отчету";
+            this.colREPNUM.FieldName = "REPNUM";
+            this.colREPNUM.Name = "colREPNUM";
+            this.colREPNUM.Visible = true;
+            this.colREPNUM.VisibleIndex = 0;
             // 
             // colPATH
             // 
             this.colPATH.Caption = "Путь к файлу";
             this.colPATH.FieldName = "PATH";
             this.colPATH.Name = "colPATH";
-            this.colPATH.OptionsColumn.AllowEdit = false;
             this.colPATH.Visible = true;
             this.colPATH.VisibleIndex = 1;
             // 
@@ -136,20 +132,15 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // splashScreenManager1
-            // 
-            this.splashScreenManager1.ClosingDelay = 500;
-            // 
-            // Form2
+            // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.layoutControl1);
-            this.Name = "Form2";
-            this.Text = "Отчеты";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form2_FormClosed);
-            this.Load += new System.EventHandler(this.Form2_Load);
+            this.Name = "Form4";
+            this.Text = "Входящие документы";
+            this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
@@ -163,16 +154,16 @@
         }
 
         #endregion
+
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
-        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private ClassLibrary1.DataSet1 dataSet11;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private ClassLibrary1.DataSet1 dataSet11;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
-        private DevExpress.XtraGrid.Columns.GridColumn colNUM;
+        private DevExpress.XtraGrid.Columns.GridColumn colREPNUM;
         private DevExpress.XtraGrid.Columns.GridColumn colPATH;
     }
 }

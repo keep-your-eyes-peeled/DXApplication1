@@ -24,8 +24,12 @@ namespace DXApplication1
 {
     public partial class Glavn : Form
     {
-        public Form1 form1;
+        public Form1 form1 = null;
+        Form2 form2 = null;
+        Form4 form4 = null;
         ClassLibrary1.Report report=new ClassLibrary1.Report(new Dictionary<string, string>());
+        private int counter = 1;
+        public int Counter { get => counter; set => counter = value; }
         public Glavn()
         {
             InitializeComponent();            
@@ -88,6 +92,7 @@ namespace DXApplication1
         {
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             form1 = new Form1();
+            form1.Text = "Отчет " + Counter++;
             form1.MdiParent = this;
             form1.Show();
             SplashScreenManager.CloseForm();            
@@ -115,19 +120,62 @@ namespace DXApplication1
         private void barButtonItem6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SplashScreenManager.ShowForm(typeof(WaitForm1));
-            Form2 form2 = new Form2();
-            form2.MdiParent = this;
-            form2.Show();
-            SplashScreenManager.CloseForm();
+            if (form4 == null)
+            {
+                form4 = new Form4();
+                form4.FormClosed += instanceHasBeenClosed;
+                form4.MdiParent = this;
+                form4.Show();
+            }
+            else
+            {
+                form4.BringToFront();
+            }
+            SplashScreenManager.CloseForm();            
         }
+        
 
         private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             SplashScreenManager.ShowForm(typeof(WaitForm1));
-            Form2 form2 = new Form2();
-            form2.MdiParent = this;
-            form2.Show();
+            if (form2 == null)
+            {
+                form2 = new Form2();
+                form2.FormClosed += instanceHasBeenClosed;
+                form2.MdiParent = this;
+                form2.Show();
+            }
+            else
+            {
+                form2.BringToFront();
+            }
             SplashScreenManager.CloseForm();
+        }
+
+        private void Glavn_Load(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            form1 = new Form1();
+            form1.Text = "Отчет " + Counter++;
+            form1.MdiParent = this;
+            form1.Show();
+            SplashScreenManager.CloseForm();
+            
+        }
+
+        private void instanceHasBeenClosed(object sender, FormClosedEventArgs e)
+        {
+            switch (sender.GetType().Name)
+            {
+                case "Form4":
+                    form4 = null;
+                    break;
+                case "Form2":
+                    form2 = null;
+                    break;
+                default:
+                    return;
+            }
         }
     }
 }

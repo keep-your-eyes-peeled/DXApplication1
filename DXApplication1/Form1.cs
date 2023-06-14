@@ -9,6 +9,7 @@ using DevExpress.XtraSplashScreen;
 using System.Windows.Forms;
 using DevExpress.ChartRangeControlClient.Core;
 using DevExpress.XtraSpellChecker.Parser;
+using System.Diagnostics.Metrics;
 
 namespace DXApplication1
 {    
@@ -16,16 +17,18 @@ namespace DXApplication1
     {
         
         private ClassLibrary1.Report report;
-
+        
         public Report Report { get => report; set => report = value; }
         
 
-        //public Dictionary<string, string> fieldValues;
+        
+
 
         enum mesyac { Января, Февраля, Марта, Апреля, Мая, Июня, Июля, Августа, Сентября, Октября, Ноября, Декабря };
         public Form1()
         {
             InitializeComponent();
+            
         }
 
         public ClassLibrary1.Report GetReport()

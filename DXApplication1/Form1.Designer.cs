@@ -33,12 +33,23 @@
             this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet11 = new ClassLibrary1.DataSet1();
+            this.advBandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colDate = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colNumber = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colTitle = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colSum1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colSum2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colDebet = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet11 = new ClassLibrary1.DataSet1();
             this.textBox111 = new System.Windows.Forms.TextBox();
             this.textEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.textEdit3 = new DevExpress.XtraEditors.DateEdit();
@@ -55,6 +66,7 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -64,25 +76,15 @@
             this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DXApplication1.WaitForm1), true, true);
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.advBandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
-            this.colDate = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colNumber = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colTitle = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colSum1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colSum2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.colDebet = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
@@ -100,9 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -120,7 +120,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(900, 44);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Создать";
+            this.button1.Text = "Подтвердить";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -154,6 +154,112 @@
             this.layoutControl1.Size = new System.Drawing.Size(924, 569);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.DataSource = this.bindingSource1;
+            this.gridControl1.Location = new System.Drawing.Point(12, 206);
+            this.gridControl1.MainView = this.advBandedGridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(900, 275);
+            this.gridControl1.TabIndex = 11;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.advBandedGridView1});
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataMember = "INCDOC";
+            this.bindingSource1.DataSource = this.dataSet11;
+            // 
+            // dataSet11
+            // 
+            this.dataSet11.ConnString = null;
+            this.dataSet11.DataSetName = "DataSet1";
+            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // advBandedGridView1
+            // 
+            this.advBandedGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.gridBand1,
+            this.gridBand4,
+            this.gridBand5});
+            this.advBandedGridView1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.colDate,
+            this.colNumber,
+            this.colTitle,
+            this.colSum1,
+            this.colSum2,
+            this.colDebet});
+            this.advBandedGridView1.GridControl = this.gridControl1;
+            this.advBandedGridView1.Name = "advBandedGridView1";
+            this.advBandedGridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridBand1
+            // 
+            this.gridBand1.Columns.Add(this.colDate);
+            this.gridBand1.Columns.Add(this.colNumber);
+            this.gridBand1.Columns.Add(this.colTitle);
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 0;
+            this.gridBand1.Width = 225;
+            // 
+            // colDate
+            // 
+            this.colDate.Caption = "Дата";
+            this.colDate.FieldName = "Date";
+            this.colDate.Name = "colDate";
+            this.colDate.Visible = true;
+            // 
+            // colNumber
+            // 
+            this.colNumber.Caption = "Номер";
+            this.colNumber.FieldName = "Number";
+            this.colNumber.Name = "colNumber";
+            this.colNumber.Visible = true;
+            // 
+            // colTitle
+            // 
+            this.colTitle.Caption = "Наименование";
+            this.colTitle.FieldName = "Title";
+            this.colTitle.Name = "colTitle";
+            this.colTitle.Visible = true;
+            // 
+            // gridBand4
+            // 
+            this.gridBand4.Caption = "Сумма расхода";
+            this.gridBand4.Columns.Add(this.colSum1);
+            this.gridBand4.Columns.Add(this.colSum2);
+            this.gridBand4.Name = "gridBand4";
+            this.gridBand4.VisibleIndex = 1;
+            this.gridBand4.Width = 150;
+            // 
+            // colSum1
+            // 
+            this.colSum1.Caption = "По отчету";
+            this.colSum1.FieldName = "Sum1";
+            this.colSum1.Name = "colSum1";
+            this.colSum1.Visible = true;
+            // 
+            // colSum2
+            // 
+            this.colSum2.Caption = "Принята к учету";
+            this.colSum2.FieldName = "Sum2";
+            this.colSum2.Name = "colSum2";
+            this.colSum2.Visible = true;
+            // 
+            // gridBand5
+            // 
+            this.gridBand5.Columns.Add(this.colDebet);
+            this.gridBand5.Name = "gridBand5";
+            this.gridBand5.VisibleIndex = 2;
+            this.gridBand5.Width = 75;
+            // 
+            // colDebet
+            // 
+            this.colDebet.Caption = "Дебет счета, субсчета";
+            this.colDebet.FieldName = "Debet";
+            this.colDebet.Name = "colDebet";
+            this.colDebet.Visible = true;
             // 
             // textEdit5
             // 
@@ -197,17 +303,6 @@
             this.simpleButton1.TabIndex = 5;
             this.simpleButton1.Text = "Добавить подтв. документ";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataMember = "INCDOC";
-            this.bindingSource1.DataSource = this.dataSet11;
-            // 
-            // dataSet11
-            // 
-            this.dataSet11.ConnString = null;
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBox111
             // 
@@ -391,6 +486,15 @@
             this.simpleLabelItem1.Text = "Предыдущий аванс";
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(115, 13);
             // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.gridControl1;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 194);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(904, 279);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Дата";
@@ -455,110 +559,6 @@
             // 
             this.splashScreenManager1.ClosingDelay = 500;
             // 
-            // gridControl1
-            // 
-            this.gridControl1.DataSource = this.bindingSource1;
-            this.gridControl1.Location = new System.Drawing.Point(12, 206);
-            this.gridControl1.MainView = this.advBandedGridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(900, 275);
-            this.gridControl1.TabIndex = 11;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.advBandedGridView1});
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.gridControl1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 194);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(904, 279);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
-            // 
-            // advBandedGridView1
-            // 
-            this.advBandedGridView1.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
-            this.gridBand1,
-            this.gridBand4,
-            this.gridBand5});
-            this.advBandedGridView1.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
-            this.colDate,
-            this.colNumber,
-            this.colTitle,
-            this.colSum1,
-            this.colSum2,
-            this.colDebet});
-            this.advBandedGridView1.GridControl = this.gridControl1;
-            this.advBandedGridView1.Name = "advBandedGridView1";
-            this.advBandedGridView1.OptionsView.ShowGroupPanel = false;
-            // 
-            // colDate
-            // 
-            this.colDate.Caption = "Дата";
-            this.colDate.FieldName = "Date";
-            this.colDate.Name = "colDate";
-            this.colDate.Visible = true;
-            // 
-            // colNumber
-            // 
-            this.colNumber.Caption = "Номер";
-            this.colNumber.FieldName = "Number";
-            this.colNumber.Name = "colNumber";
-            this.colNumber.Visible = true;
-            // 
-            // colTitle
-            // 
-            this.colTitle.Caption = "Наименование";
-            this.colTitle.FieldName = "Title";
-            this.colTitle.Name = "colTitle";
-            this.colTitle.Visible = true;
-            // 
-            // colSum1
-            // 
-            this.colSum1.Caption = "По отчету";
-            this.colSum1.FieldName = "Sum1";
-            this.colSum1.Name = "colSum1";
-            this.colSum1.Visible = true;
-            // 
-            // colSum2
-            // 
-            this.colSum2.Caption = "Принята к учету";
-            this.colSum2.FieldName = "Sum2";
-            this.colSum2.Name = "colSum2";
-            this.colSum2.Visible = true;
-            // 
-            // colDebet
-            // 
-            this.colDebet.Caption = "Дебет счета, субсчета";
-            this.colDebet.FieldName = "Debet";
-            this.colDebet.Name = "colDebet";
-            this.colDebet.Visible = true;
-            // 
-            // gridBand1
-            // 
-            this.gridBand1.Columns.Add(this.colDate);
-            this.gridBand1.Columns.Add(this.colNumber);
-            this.gridBand1.Columns.Add(this.colTitle);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 225;
-            // 
-            // gridBand4
-            // 
-            this.gridBand4.Caption = "Сумма расхода";
-            this.gridBand4.Columns.Add(this.colSum1);
-            this.gridBand4.Columns.Add(this.colSum2);
-            this.gridBand4.Name = "gridBand4";
-            this.gridBand4.VisibleIndex = 1;
-            this.gridBand4.Width = 150;
-            // 
-            // gridBand5
-            // 
-            this.gridBand5.Columns.Add(this.colDebet);
-            this.gridBand5.Name = "gridBand5";
-            this.gridBand5.VisibleIndex = 2;
-            this.gridBand5.Width = 75;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,11 +571,13 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties.CalendarTimeProperties)).EndInit();
@@ -593,9 +595,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.advBandedGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
