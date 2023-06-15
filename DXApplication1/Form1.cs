@@ -228,7 +228,8 @@ namespace DXApplication1
                 {"ПолВал", ""},
                 {"СУ", ""},
                 {"СУС", ""},
-/*                {"Сч1", "11"},
+
+                /*{"Сч1", "11"},
                 {"Сч2", "12"},
                 {"Сч3", "13"},
                 {"Сч4", "14"},
@@ -359,8 +360,8 @@ namespace DXApplication1
 
             GetReport();
             this.dataSet11.INCDOCS.Update(this.dataSet11.MyOraConnection);
+            this.dataSet11.REPORTS.Update(this.dataSet11.MyOraConnection);
 
-            
             SplashScreenManager.CloseForm();
 
         }
@@ -381,6 +382,7 @@ namespace DXApplication1
 
             this.dataSet11.INCDOC.Merge(form3.IncDoc);
             this.dataSet11.INCDOCS.Merge(form3.docs);
+            MessageBox.Show(this.dataSet11.INCDOCS.Count.ToString());
 
             SplashScreenManager.CloseForm();
             

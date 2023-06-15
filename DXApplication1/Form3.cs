@@ -54,9 +54,7 @@ namespace DXApplication1
             bindingSource1.AddNew();
 
             DataSet1.INCDOCRow curRow = ((DataRowView)bindingSource1.Current).Row
-                as DataSet1.INCDOCRow;
-
-            
+                as DataSet1.INCDOCRow;            
 
             curRow.Date = textEdit1.Text;
             curRow.Number = textEdit2.Text;
@@ -64,6 +62,7 @@ namespace DXApplication1
             curRow.Sum1 = textEdit5.Text;
             curRow.Sum2 = textEdit6.Text;
             curRow.Debet = textEdit4.Text;
+            curRow.Kredit = textEdit7.Text;
 
             IncDoc.AddINCDOCRow(((DataSet1.INCDOCRow)((DataRowView)bindingSource1.Current).Row));
             bindingSource1.EndEdit();
