@@ -139,6 +139,13 @@ namespace ClassLibrary1
 
         partial class USERSDataTable
         {
+            public string FillBy(OracleConnection OraConnection, string hashSum)
+            {
+                using (DataSet1TableAdapters.USERSTableAdapter ta = new DataSet1TableAdapters.USERSTableAdapter())
+                {
+                    return ta.ScalarQuery(hashSum);
+                }
+            }
             public bool FindByHash(OracleConnection OraConnection, string hashSum)
             {
                 using (DataSet1TableAdapters.USERSTableAdapter ta = new DataSet1TableAdapters.USERSTableAdapter())

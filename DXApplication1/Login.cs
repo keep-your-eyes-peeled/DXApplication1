@@ -20,12 +20,13 @@ namespace DXApplication1
     {
         public Login()
         {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
             InitializeComponent();
+            SplashScreenManager.CloseForm();
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
             
             
             if (textEdit1.Text.Length == 0 || textEdit2.Text.Length == 0)
@@ -36,11 +37,13 @@ namespace DXApplication1
             {
                 this.dataSet11.SetOracleConnectionString();
                 string hesh = this.dataSet11.GetStringHashSum(textEdit1.Text, textEdit2.Text);
-                OracleConnection myOraConnection= this.dataSet11.MyOraConnection;                
+                OracleConnection myOraConnection= this.dataSet11.MyOraConnection;
+                string post = this.dataSet11.USERS.FillBy(this.dataSet11.MyOraConnection, hesh);
                 switch (this.dataSet11.USERS.FindByHash(myOraConnection, hesh))
                 {
                     case true:
                         Glavn glavn = new Glavn();
+                        glavn.post = post;
                         glavn.Show();
                         this.Hide();
                         break;
@@ -48,7 +51,6 @@ namespace DXApplication1
                         MessageBox.Show("Ошибка авторизации!");
                         break;
                 }
-                SplashScreenManager.CloseForm();
             }
         }
 

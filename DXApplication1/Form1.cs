@@ -377,13 +377,10 @@ namespace DXApplication1
         {
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             
-            Form3 form3 = new Form3(textBox1.Text);
+            Form3 form3 = new Form3(textBox1.Text, this.dataSet11.INCDOCS);
             form3.ShowDialog();
-
+            
             this.dataSet11.INCDOC.Merge(form3.IncDoc);
-            this.dataSet11.INCDOCS.Merge(form3.docs);
-            MessageBox.Show(this.dataSet11.INCDOCS.Count.ToString());
-
             SplashScreenManager.CloseForm();
             
         }

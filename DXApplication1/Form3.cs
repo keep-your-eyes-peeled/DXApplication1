@@ -16,12 +16,13 @@ namespace DXApplication1
     public partial class Form3 : Form
     {
         public DataSet1.INCDOCDataTable IncDoc = new DataSet1.INCDOCDataTable();
-        public DataSet1.INCDOCSDataTable docs = new DataSet1.INCDOCSDataTable();
+        public DataSet1.INCDOCSDataTable docs = null;
         string repnum = "";
-        public Form3(string _repnum)
+        public Form3(string _repnum, DataSet1.INCDOCSDataTable _docs)
         {
             InitializeComponent();
             this.repnum = _repnum;
+            this.docs = _docs;
         }
 
 
@@ -37,7 +38,7 @@ namespace DXApplication1
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.BindingSource bs2 = new System.Windows.Forms.BindingSource();
-            bs2.DataSource = this.docs;
+            bs2.DataSource = docs;
             bs2.AddNew();
 
             DataSet1.INCDOCSRow docsRow = ((DataRowView)bs2.Current).Row
@@ -66,7 +67,6 @@ namespace DXApplication1
 
             IncDoc.AddINCDOCRow(((DataSet1.INCDOCRow)((DataRowView)bindingSource1.Current).Row));
             bindingSource1.EndEdit();
-
             this.Close();
         }
     }

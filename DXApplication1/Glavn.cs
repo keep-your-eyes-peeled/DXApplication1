@@ -25,6 +25,7 @@ namespace DXApplication1
     public partial class Glavn : Form
     {
         public Form1 form1 = null;
+        public string post = null;
         Form2 form2 = null;
         Form4 form4 = null;
         ClassLibrary1.Report report=new ClassLibrary1.Report(new Dictionary<string, string>());
@@ -32,7 +33,9 @@ namespace DXApplication1
         public int Counter { get => counter; set => counter = value; }
         public Glavn()
         {
-            InitializeComponent();            
+            SplashScreenManager.ShowForm(typeof(WaitForm1));            
+            InitializeComponent();
+            SplashScreenManager.CloseForm();
         }
 
         private void Glavn_FormClosed(object sender, FormClosedEventArgs e)
@@ -154,13 +157,13 @@ namespace DXApplication1
 
         private void Glavn_Load(object sender, EventArgs e)
         {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            /*SplashScreenManager.ShowForm(typeof(WaitForm1));
             form1 = new Form1();
             form1.Text = "Отчет " + Counter++;
             form1.MdiParent = this;
             form1.Show();
-            SplashScreenManager.CloseForm();
-            
+            SplashScreenManager.CloseForm();*/
+
         }
 
         private void instanceHasBeenClosed(object sender, FormClosedEventArgs e)

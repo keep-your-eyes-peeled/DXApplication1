@@ -4167,17 +4167,17 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[3];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[4];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "select * from users";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "select POST from Users where HESHSUM = :Parametr1";
+            this._commandCollection[1].CommandText = "SELECT POST FROM \"C##ADMIN\".USERS WHERE (HESHSUM = :var1)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = ":Parametr1";
+            param.ParameterName = ":var1";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 100;
             param.IsNullable = true;
@@ -4194,6 +4194,17 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "HESHSUM";
             this._commandCollection[2].Parameters.Add(param);
+            this._commandCollection[3] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT POST FROM USERS WHERE (HESHSUM = :var1)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":var1";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 100;
+            param.IsNullable = true;
+            param.SourceColumn = "HESHSUM";
+            this._commandCollection[3].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4224,13 +4235,13 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(DataSet1.USERSDataTable dataTable, string Parametr1) {
+        public virtual int FillBy(DataSet1.USERSDataTable dataTable, string var1) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((Parametr1 == null)) {
+            if ((var1 == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Parametr1));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(var1));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4243,13 +4254,13 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual DataSet1.USERSDataTable GetDataBy1(string Parametr1) {
+        public virtual DataSet1.USERSDataTable GetDataBy1(string var1) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((Parametr1 == null)) {
+            if ((var1 == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Parametr1));
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(var1));
             }
             DataSet1.USERSDataTable dataTable = new DataSet1.USERSDataTable();
             this.Adapter.Fill(dataTable);
@@ -4447,6 +4458,40 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             }
             else {
                 return new global::System.Nullable<decimal>(((decimal)(returnValue)));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual string ScalarQuery(string var1) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[3];
+            if ((var1 == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(var1));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((string)(returnValue));
             }
         }
     }
