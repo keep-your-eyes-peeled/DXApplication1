@@ -48,7 +48,7 @@ namespace DXApplication1
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             report = form1.Report;
             var engine = new Engine();
-            engine.Merge("Report_temp.docx", report.FieldValues, "Report_out.docx");
+            engine.Merge("Report_temp.docx", report.FieldValues, @"D:\Документы\Отчеты\Report_out.docx");
             SplashScreenManager.CloseForm();
             
             //Process.Start("Report_out.docx");

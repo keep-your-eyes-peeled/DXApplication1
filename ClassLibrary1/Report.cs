@@ -36,7 +36,7 @@ namespace ClassLibrary1
             try
             {
                 Ex = new Microsoft.Office.Interop.Excel.Application();
-                Workbook = Ex.Workbooks.Open(Environment.CurrentDirectory + @"\Report_temp.xlsx");
+                Workbook = Ex.Workbooks.Open(Environment.CurrentDirectory + @"D:\Документы\Отчеты\Report_out.xlsx");
                 Worksheet = Workbook.Worksheets["Лист1"];
 
                 Worksheet.Range["BB21"].Value = fieldValues["ТабНом"];

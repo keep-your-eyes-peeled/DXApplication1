@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using ClassLibrary1;
 using DevExpress.ChartRangeControlClient.Core;
+using System.Security.Cryptography;
 
 namespace DXApplication1
 {
@@ -18,6 +19,8 @@ namespace DXApplication1
         public DataSet1.INCDOCDataTable IncDoc = new DataSet1.INCDOCDataTable();
         public DataSet1.INCDOCSDataTable docs = null;
         string repnum = "";
+        string fileName = null;
+        string filePath = null;
         public Form3(string _repnum, DataSet1.INCDOCSDataTable _docs)
         {
             InitializeComponent();
@@ -32,6 +35,8 @@ namespace DXApplication1
             if(openFileDialog.ShowDialog() == DialogResult.OK )
             {
                 labelControl1.Text = openFileDialog.FileName;
+                fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
+                filePath = System.IO.Path.GetFullPath(openFileDialog.FileName);
             }
         }
 
@@ -67,6 +72,9 @@ namespace DXApplication1
 
             IncDoc.AddINCDOCRow(((DataSet1.INCDOCRow)((DataRowView)bindingSource1.Current).Row));
             bindingSource1.EndEdit();
+
+            File.Copy(filePath, $@"D:\Документы\Входящие документы\{fileName}");
+
             this.Close();
         }
     }

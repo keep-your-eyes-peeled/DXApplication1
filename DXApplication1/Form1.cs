@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.ChartRangeControlClient.Core;
 using DevExpress.XtraSpellChecker.Parser;
 using System.Diagnostics.Metrics;
+using DevExpress.XtraEditors;
 
 namespace DXApplication1
 {    
@@ -359,6 +360,19 @@ namespace DXApplication1
 
 
             GetReport();
+            System.Windows.Forms.BindingSource bs1 = new System.Windows.Forms.BindingSource();
+            bs1.DataSource = this.dataSet11.REPORTS;
+            bs1.AddNew();
+
+            DataSet1.REPORTSRow Row = ((DataRowView)bs1.Current).Row
+            as DataSet1.REPORTSRow;
+
+            Row.NUM = report.FieldValues["Номер"];
+            Row.PATH = @"D:\Документы\Отчеты";
+
+
+            this.dataSet11.REPORTS.AddREPORTSRow(((DataSet1.REPORTSRow)((DataRowView)bs1.Current).Row));
+            bs1.EndEdit();
             this.dataSet11.INCDOCS.Update(this.dataSet11.MyOraConnection);
             this.dataSet11.REPORTS.Update(this.dataSet11.MyOraConnection);
 
