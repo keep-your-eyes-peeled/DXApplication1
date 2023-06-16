@@ -72,6 +72,14 @@ namespace ClassLibrary1
 
         partial class INCDOCSDataTable
         {
+            public void FillBy(OracleConnection OraConnection, string emplnum)
+            {
+                using (DataSet1TableAdapters.INCDOCSTableAdapter ta = new DataSet1TableAdapters.INCDOCSTableAdapter())
+                {
+                    ta.FillBy(this, emplnum);
+                }
+            }
+
             public void Fill(OracleConnection OraConnection)
             {
                 using (DataSet1TableAdapters.INCDOCSTableAdapter ta = new DataSet1TableAdapters.INCDOCSTableAdapter())
@@ -121,6 +129,13 @@ namespace ClassLibrary1
 
         partial class REPORTSDataTable
         {
+            public void FillBy(OracleConnection OraConnection, string emplnum)
+            {
+                using (DataSet1TableAdapters.REPORTSTableAdapter ta = new DataSet1TableAdapters.REPORTSTableAdapter())
+                {
+                    ta.FillBy(this, emplnum);
+                }
+            }
             public void Fill(OracleConnection OraConnection)
             {
                 using (DataSet1TableAdapters.REPORTSTableAdapter ta = new DataSet1TableAdapters.REPORTSTableAdapter())
@@ -188,4 +203,5 @@ namespace ClassLibrary1
 
     }
 }
+
 

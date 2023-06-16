@@ -12,6 +12,7 @@ using DevExpress.XtraSpellChecker.Parser;
 using System.Diagnostics.Metrics;
 using DevExpress.XtraEditors;
 using System.IO;
+using EasyDox;
 
 namespace DXApplication1
 {    
@@ -363,6 +364,8 @@ namespace DXApplication1
 
 
             GetReport();
+            var engine = new Engine();
+            engine.Merge("Report_temp.docx", report.FieldValues, "Report_out.docx");
             System.Windows.Forms.BindingSource bs1 = new System.Windows.Forms.BindingSource();
             bs1.DataSource = this.dataSet11.REPORTS;
             bs1.AddNew();

@@ -14,9 +14,11 @@ namespace DXApplication1
     public partial class Form2 : Form
     {
         public string emplnum = null;
-        public Form2()
+        string post = null;
+        public Form2(string post)
         {
             InitializeComponent();
+            this.post = post;
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -35,7 +37,14 @@ namespace DXApplication1
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            this.dataSet11.REPORTS.Fill(this.dataSet11.MyOraConnection);
+            if(post!="Главный бухгалтер" && post != "Бухгалтер")
+            {
+                this.dataSet11.REPORTS.FillBy(this.dataSet11.MyOraConnection, emplnum);
+            }
+            else
+            {
+                this.dataSet11.REPORTS.Fill(this.dataSet11.MyOraConnection);
+            }
         }
 
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)

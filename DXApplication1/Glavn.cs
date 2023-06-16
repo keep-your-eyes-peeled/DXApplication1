@@ -51,7 +51,7 @@ namespace DXApplication1
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             report = form1.Report;
             var engine = new Engine();
-            engine.Merge("Report_temp.docx", report.FieldValues, @"D:\Документы\Отчеты\Report_out.docx");
+            engine.Merge("Report_temp.docx", report.FieldValues, "Report_out.docx");
             SplashScreenManager.CloseForm();
             
             //Process.Start("Report_out.docx");
@@ -64,9 +64,9 @@ namespace DXApplication1
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             report = form1.Report;
             var engine = new Engine();
-            engine.Merge(@"D:\work\Диплом\Документы\Report_temp.docx", report.FieldValues, @"D:\work\Диплом\Документы\Report_out.docx");
+            engine.Merge("Report_temp.docx", report.FieldValues, "Report_out.docx");
             Microsoft.Office.Interop.Word.Application word = new Microsoft.Office.Interop.Word.Application();
-            FileInfo file = new FileInfo(@"D:\work\Диплом\Документы\Report_out.docx");
+            FileInfo file = new FileInfo("Report_out.pdf");
             word.Visible = false;
             word.ScreenUpdating = false;
             object oMissing = System.Reflection.Missing.Value;
@@ -75,7 +75,7 @@ namespace DXApplication1
                 ref oMissing, ref oMissing,
                 ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
                 ref oMissing, ref oMissing);
-            doc.SaveAs2(@"D:\work\Диплом\Документы\Report_out.pdf", WdSaveFormat.wdFormatPDF,
+            doc.SaveAs2("Report_out.pdf", WdSaveFormat.wdFormatPDF,
                 ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
                  ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing);
 
@@ -129,7 +129,7 @@ namespace DXApplication1
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             if (form4 == null)
             {
-                form4 = new Form4();
+                form4 = new Form4(post);
                 form4.FormClosed += instanceHasBeenClosed;
                 form4.emplnum = emplnum;
                 form4.MdiParent = this;
@@ -148,7 +148,7 @@ namespace DXApplication1
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             if (form2 == null)
             {
-                form2 = new Form2();
+                form2 = new Form2(post);
                 form2.FormClosed += instanceHasBeenClosed;
                 form2.MdiParent = this;
                 form2.emplnum = emplnum;

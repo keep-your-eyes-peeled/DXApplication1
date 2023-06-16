@@ -745,6 +745,8 @@ namespace ClassLibrary1 {
             
             private global::System.Data.DataColumn columnCREATORENUM;
             
+            private global::System.Data.DataColumn columnAPPROVED;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public REPORTSDataTable() {
@@ -812,6 +814,14 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn APPROVEDColumn {
+                get {
+                    return this.columnAPPROVED;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -847,13 +857,14 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public REPORTSRow AddREPORTSRow(string NUM, string PATH, string CREATORENUM) {
+            public REPORTSRow AddREPORTSRow(string NUM, string PATH, string CREATORENUM, short APPROVED) {
                 REPORTSRow rowREPORTSRow = ((REPORTSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         NUM,
                         PATH,
-                        CREATORENUM};
+                        CREATORENUM,
+                        APPROVED};
                 rowREPORTSRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowREPORTSRow);
                 return rowREPORTSRow;
@@ -887,6 +898,7 @@ namespace ClassLibrary1 {
                 this.columnNUM = base.Columns["NUM"];
                 this.columnPATH = base.Columns["PATH"];
                 this.columnCREATORENUM = base.Columns["CREATORENUM"];
+                this.columnAPPROVED = base.Columns["APPROVED"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -900,6 +912,8 @@ namespace ClassLibrary1 {
                 base.Columns.Add(this.columnPATH);
                 this.columnCREATORENUM = new global::System.Data.DataColumn("CREATORENUM", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCREATORENUM);
+                this.columnAPPROVED = new global::System.Data.DataColumn("APPROVED", typeof(short), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAPPROVED);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -2187,6 +2201,22 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public short APPROVED {
+                get {
+                    try {
+                        return ((short)(this[this.tableREPORTS.APPROVEDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'APPROVED\' в таблице \'REPORTS\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableREPORTS.APPROVEDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsNUMNull() {
                 return this.IsNull(this.tableREPORTS.NUMColumn);
             }
@@ -2219,6 +2249,18 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCREATORENUMNull() {
                 this[this.tableREPORTS.CREATORENUMColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAPPROVEDNull() {
+                return this.IsNull(this.tableREPORTS.APPROVEDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAPPROVEDNull() {
+                this[this.tableREPORTS.APPROVEDColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3689,10 +3731,11 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("NUM", "NUM");
             tableMapping.ColumnMappings.Add("PATH", "PATH");
             tableMapping.ColumnMappings.Add("CREATORENUM", "CREATORENUM");
+            tableMapping.ColumnMappings.Add("APPROVED", "APPROVED");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""C##ADMIN"".""REPORTS"" WHERE ((""ID"" = :Original_ID) AND ((:IsNull_NUM = 1 AND ""NUM"" IS NULL) OR (""NUM"" = :Original_NUM)) AND ((:IsNull_PATH = 1 AND ""PATH"" IS NULL) OR (""PATH"" = :Original_PATH)) AND ((:IsNull_CREATORENUM = 1 AND ""CREATORENUM"" IS NULL) OR (""CREATORENUM"" = :Original_CREATORENUM)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""C##ADMIN"".""REPORTS"" WHERE ((""ID"" = :Original_ID) AND ((:IsNull_NUM = 1 AND ""NUM"" IS NULL) OR (""NUM"" = :Original_NUM)) AND ((:IsNull_PATH = 1 AND ""PATH"" IS NULL) OR (""PATH"" = :Original_PATH)) AND ((:IsNull_CREATORENUM = 1 AND ""CREATORENUM"" IS NULL) OR (""CREATORENUM"" = :Original_CREATORENUM)) AND ((:IsNull_APPROVED = 1 AND ""APPROVED"" IS NULL) OR (""APPROVED"" = :Original_APPROVED)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_ID";
@@ -3757,10 +3800,29 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             param.SourceColumn = "CREATORENUM";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_APPROVED";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "APPROVED";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_APPROVED";
+            param.DbType = global::System.Data.DbType.Int16;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int16;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "APPROVED";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"C##ADMIN\".\"REPORTS\" (\"NUM\", \"PATH\", \"CREATORENUM\") VALUES (:NUM, :PA" +
-                "TH, :CREATORENUM)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"C##ADMIN\".\"REPORTS\" (\"NUM\", \"PATH\", \"CREATORENUM\", \"APPROVED\") VALUE" +
+                "S (:NUM, :PATH, :CREATORENUM, :APPROVED)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":NUM";
@@ -3783,9 +3845,17 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "CREATORENUM";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":APPROVED";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "APPROVED";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE ""C##ADMIN"".""REPORTS"" SET ""NUM"" = :NUM, ""PATH"" = :PATH, ""CREATORENUM"" = :CREATORENUM WHERE ((""ID"" = :Original_ID) AND ((:IsNull_NUM = 1 AND ""NUM"" IS NULL) OR (""NUM"" = :Original_NUM)) AND ((:IsNull_PATH = 1 AND ""PATH"" IS NULL) OR (""PATH"" = :Original_PATH)) AND ((:IsNull_CREATORENUM = 1 AND ""CREATORENUM"" IS NULL) OR (""CREATORENUM"" = :Original_CREATORENUM)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""C##ADMIN"".""REPORTS"" SET ""NUM"" = :NUM, ""PATH"" = :PATH, ""CREATORENUM"" = :CREATORENUM, ""APPROVED"" = :APPROVED WHERE ((""ID"" = :Original_ID) AND ((:IsNull_NUM = 1 AND ""NUM"" IS NULL) OR (""NUM"" = :Original_NUM)) AND ((:IsNull_PATH = 1 AND ""PATH"" IS NULL) OR (""PATH"" = :Original_PATH)) AND ((:IsNull_CREATORENUM = 1 AND ""CREATORENUM"" IS NULL) OR (""CREATORENUM"" = :Original_CREATORENUM)) AND ((:IsNull_APPROVED = 1 AND ""APPROVED"" IS NULL) OR (""APPROVED"" = :Original_APPROVED)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":NUM";
@@ -3809,6 +3879,14 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             param.SourceColumn = "CREATORENUM";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":APPROVED";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "APPROVED";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":Original_ID";
             param.DbType = global::System.Data.DbType.Decimal;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
@@ -3827,6 +3905,14 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":Original_NUM";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 20;
+            param.IsNullable = true;
+            param.SourceColumn = "NUM";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":IsNull_PATH";
             param.DbType = global::System.Data.DbType.Int32;
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
@@ -3834,6 +3920,14 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             param.SourceColumn = "PATH";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":Original_PATH";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 200;
+            param.IsNullable = true;
+            param.SourceColumn = "PATH";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":IsNull_CREATORENUM";
@@ -3845,11 +3939,29 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             param.SourceColumnNullMapping = true;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = ":Original_NUM";
+            param.ParameterName = ":Original_CREATORENUM";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
-            param.Size = 20;
+            param.Size = 100;
             param.IsNullable = true;
-            param.SourceColumn = "NUM";
+            param.SourceColumn = "CREATORENUM";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":IsNull_APPROVED";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "APPROVED";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":Original_APPROVED";
+            param.DbType = global::System.Data.DbType.Decimal;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Decimal;
+            param.Size = 22;
+            param.IsNullable = true;
+            param.SourceColumn = "APPROVED";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
         }
@@ -3864,11 +3976,22 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT * FROM \"C##ADMIN\".REPORTS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT * FROM \"C##ADMIN\".REPORTS WHERE (CREATORENUM = :emplnum)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":emplnum";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 100;
+            param.IsNullable = true;
+            param.SourceColumn = "CREATORENUM";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3890,6 +4013,42 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSet1.REPORTSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.REPORTSDataTable dataTable = new DataSet1.REPORTSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DataSet1.REPORTSDataTable dataTable, string emplnum) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((emplnum == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(emplnum));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.REPORTSDataTable GetDataBy(string emplnum) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((emplnum == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(emplnum));
+            }
             DataSet1.REPORTSDataTable dataTable = new DataSet1.REPORTSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -3928,7 +4087,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_ID, string Original_NUM, string Original_PATH, string Original_CREATORENUM) {
+        public virtual int Delete(long Original_ID, string Original_NUM, string Original_PATH, string Original_CREATORENUM, global::System.Nullable<short> Original_APPROVED) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_ID));
             if ((Original_NUM == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -3954,6 +4113,14 @@ namespace ClassLibrary1.DataSet1TableAdapters {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_CREATORENUM));
             }
+            if ((Original_APPROVED.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((short)(Original_APPROVED.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -3974,7 +4141,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string NUM, string PATH, string CREATORENUM) {
+        public virtual int Insert(string NUM, string PATH, string CREATORENUM, global::System.Nullable<decimal> APPROVED) {
             if ((NUM == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -3992,6 +4159,12 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(CREATORENUM));
+            }
+            if ((APPROVED.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((decimal)(APPROVED.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4013,7 +4186,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NUM, string PATH, string CREATORENUM, decimal Original_ID, string Original_NUM) {
+        public virtual int Update(string NUM, string PATH, string CREATORENUM, global::System.Nullable<decimal> APPROVED, decimal Original_ID, string Original_NUM, string Original_PATH, string Original_CREATORENUM, global::System.Nullable<decimal> Original_APPROVED) {
             if ((NUM == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -4032,14 +4205,44 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(CREATORENUM));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(Original_ID));
-            if ((Original_NUM == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            if ((APPROVED.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((decimal)(APPROVED.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_NUM));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((decimal)(Original_ID));
+            if ((Original_NUM == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_NUM));
+            }
+            if ((Original_PATH == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_PATH));
+            }
+            if ((Original_CREATORENUM == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_CREATORENUM));
+            }
+            if ((Original_APPROVED.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((decimal)(Original_APPROVED.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5093,11 +5296,22 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[1];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[2];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID, REPNUM, PATH, creatorenum FROM \"C##ADMIN\".INCDOCS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT * FROM \"C##ADMIN\".INCDOCS where CREATORENUM=:emplnum";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":emplnum";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 100;
+            param.IsNullable = true;
+            param.SourceColumn = "CREATORENUM";
+            this._commandCollection[1].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5119,6 +5333,42 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSet1.INCDOCSDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet1.INCDOCSDataTable dataTable = new DataSet1.INCDOCSDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DataSet1.INCDOCSDataTable dataTable, string emplnum) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((emplnum == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(emplnum));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet1.INCDOCSDataTable GetDataBy(string emplnum) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((emplnum == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(emplnum));
+            }
             DataSet1.INCDOCSDataTable dataTable = new DataSet1.INCDOCSDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
