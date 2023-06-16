@@ -11,6 +11,7 @@ using DevExpress.ChartRangeControlClient.Core;
 using DevExpress.XtraSpellChecker.Parser;
 using System.Diagnostics.Metrics;
 using DevExpress.XtraEditors;
+using System.IO;
 
 namespace DXApplication1
 {    
@@ -366,12 +367,27 @@ namespace DXApplication1
             bs1.DataSource = this.dataSet11.REPORTS;
             bs1.AddNew();
 
+            if (File.Exists($@"D:\Документы\Отчеты\{report.GetReportName()}") == false)
+            {
+                File.Copy("Report_out.docx", $@"D:\Документы\Отчеты\{report.GetReportName()}");
+                File.Delete("Report_out.docx");
+            }
+            else
+            {
+                File.Copy("Report_out.docx", $@"D:\Документы\Отчеты\(copy{new Random().Next(1, 100000)}){report.GetReportName()}");
+                File.Delete("Report_out.docx");
+            }
+
             DataSet1.REPORTSRow Row = ((DataRowView)bs1.Current).Row
             as DataSet1.REPORTSRow;
 
+            
+
             Row.NUM = report.FieldValues["Номер"];
-            Row.PATH = @"D:\Документы\Отчеты";
+            Row.PATH = $@"D:\Документы\Отчеты\{report.GetReportName()}";
             Row.CREATORENUM = emplnum;
+
+            
 
 
             this.dataSet11.REPORTS.AddREPORTSRow(((DataSet1.REPORTSRow)((DataRowView)bs1.Current).Row));

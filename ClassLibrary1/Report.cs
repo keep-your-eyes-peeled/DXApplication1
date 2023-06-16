@@ -477,6 +477,21 @@ namespace ClassLibrary1
 
 
         }
+
+        public string GetReportName()
+        {
+            try
+            {
+                string fileName = "Отчет№" + this.fieldValues["Номер"] + "_" +
+                    this.fieldValues["Дата"] + "_" + this.fieldValues["ФамилияИнициалы"] + ".docx";
+                return fileName;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return null;
+            }
+        }
         #endregion
     }
 }
