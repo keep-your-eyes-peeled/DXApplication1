@@ -1048,6 +1048,8 @@ namespace ClassLibrary1 {
             
             private global::System.Data.DataColumn columnPOST;
             
+            private global::System.Data.DataColumn columnENUM;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public USERSDataTable() {
@@ -1107,6 +1109,14 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ENUMColumn {
+                get {
+                    return this.columnENUM;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1142,12 +1152,13 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public USERSRow AddUSERSRow(long ID, string HESHSUM, string POST) {
+            public USERSRow AddUSERSRow(long ID, string HESHSUM, string POST, string ENUM) {
                 USERSRow rowUSERSRow = ((USERSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         HESHSUM,
-                        POST};
+                        POST,
+                        ENUM};
                 rowUSERSRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowUSERSRow);
                 return rowUSERSRow;
@@ -1180,6 +1191,7 @@ namespace ClassLibrary1 {
                 this.columnID = base.Columns["ID"];
                 this.columnHESHSUM = base.Columns["HESHSUM"];
                 this.columnPOST = base.Columns["POST"];
+                this.columnENUM = base.Columns["ENUM"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1191,12 +1203,15 @@ namespace ClassLibrary1 {
                 base.Columns.Add(this.columnHESHSUM);
                 this.columnPOST = new global::System.Data.DataColumn("POST", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPOST);
+                this.columnENUM = new global::System.Data.DataColumn("ENUM", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnENUM);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AllowDBNull = false;
                 this.columnID.Unique = true;
                 this.columnHESHSUM.MaxLength = 100;
                 this.columnPOST.MaxLength = 100;
+                this.columnENUM.MaxLength = 30;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2266,6 +2281,22 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string ENUM {
+                get {
+                    try {
+                        return ((string)(this[this.tableUSERS.ENUMColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'ENUM\' в таблице \'USERS\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableUSERS.ENUMColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsHESHSUMNull() {
                 return this.IsNull(this.tableUSERS.HESHSUMColumn);
             }
@@ -2286,6 +2317,18 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetPOSTNull() {
                 this[this.tableUSERS.POSTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsENUMNull() {
+                return this.IsNull(this.tableUSERS.ENUMColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetENUMNull() {
+                this[this.tableUSERS.ENUMColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -4139,12 +4182,11 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("ID", "ID");
             tableMapping.ColumnMappings.Add("HESHSUM", "HESHSUM");
             tableMapping.ColumnMappings.Add("POST", "POST");
+            tableMapping.ColumnMappings.Add("ENUM", "ENUM");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM \"USERS\" WHERE ((\"ID\" = :Original_ID) AND ((:IsNull_HESHSUM = 1 AND \"H" +
-                "ESHSUM\" IS NULL) OR (\"HESHSUM\" = :Original_HESHSUM)) AND ((:IsNull_POST = 1 AND " +
-                "\"POST\" IS NULL) OR (\"POST\" = :Original_POST)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM ""C##ADMIN"".""USERS"" WHERE ((""ID"" = :Original_ID) AND ((:IsNull_HESHSUM = 1 AND ""HESHSUM"" IS NULL) OR (""HESHSUM"" = :Original_HESHSUM)) AND ((:IsNull_POST = 1 AND ""POST"" IS NULL) OR (""POST"" = :Original_POST)) AND ((:IsNull_ENUM = 1 AND ""ENUM"" IS NULL) OR (""ENUM"" = :Original_ENUM)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_ID";
@@ -4191,9 +4233,28 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             param.SourceColumn = "POST";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ENUM";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "ENUM";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ENUM";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "ENUM";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"USERS\" (\"ID\", \"HESHSUM\", \"POST\") VALUES (:ID, :HESHSUM, :POST)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"C##ADMIN\".\"USERS\" (\"ID\", \"HESHSUM\", \"POST\", \"ENUM\") VALUES (:ID, :HE" +
+                "SHSUM, :POST, :ENUM)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "ID";
@@ -4217,12 +4278,16 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "POST";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ENUM";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "ENUM";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE \"USERS\" SET \"ID\" = :ID, \"HESHSUM\" = :HESHSUM, \"POST\" = :POST WHERE ((\"ID\" " +
-                "= :Original_ID) AND ((:IsNull_HESHSUM = 1 AND \"HESHSUM\" IS NULL) OR (\"HESHSUM\" =" +
-                " :Original_HESHSUM)) AND ((:IsNull_POST = 1 AND \"POST\" IS NULL) OR (\"POST\" = :Or" +
-                "iginal_POST)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE ""C##ADMIN"".""USERS"" SET ""ID"" = :ID, ""HESHSUM"" = :HESHSUM, ""POST"" = :POST, ""ENUM"" = :ENUM WHERE ((""ID"" = :Original_ID) AND ((:IsNull_HESHSUM = 1 AND ""HESHSUM"" IS NULL) OR (""HESHSUM"" = :Original_HESHSUM)) AND ((:IsNull_POST = 1 AND ""POST"" IS NULL) OR (""POST"" = :Original_POST)) AND ((:IsNull_ENUM = 1 AND ""ENUM"" IS NULL) OR (""ENUM"" = :Original_ENUM)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "ID";
@@ -4245,6 +4310,13 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "POST";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "ENUM";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "ENUM";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = "Original_ID";
@@ -4291,6 +4363,24 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             param.SourceColumn = "POST";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "IsNull_ENUM";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int32;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "ENUM";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = "Original_ENUM";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 30;
+            param.IsNullable = true;
+            param.SourceColumn = "ENUM";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4303,14 +4393,14 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[4];
+            this._commandCollection = new global::Oracle.ManagedDataAccess.Client.OracleCommand[5];
             this._commandCollection[0] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "select * from users";
+            this._commandCollection[0].CommandText = "SELECT * FROM \"C##ADMIN\".USERS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT POST FROM \"C##ADMIN\".USERS WHERE (HESHSUM = :var1)";
+            this._commandCollection[1].CommandText = "SELECT * FROM \"C##ADMIN\".USERS WHERE (HESHSUM = :var1)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::Oracle.ManagedDataAccess.Client.OracleParameter param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":var1";
@@ -4332,7 +4422,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             this._commandCollection[2].Parameters.Add(param);
             this._commandCollection[3] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT POST FROM USERS WHERE (HESHSUM = :var1)";
+            this._commandCollection[3].CommandText = "SELECT POST FROM \"C##ADMIN\".USERS WHERE (HESHSUM = :var1)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
             param.ParameterName = ":var1";
@@ -4341,6 +4431,17 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "HESHSUM";
             this._commandCollection[3].Parameters.Add(param);
+            this._commandCollection[4] = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT ENUM FROM USERS where HESHSUM = :heshsum";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
+            param.ParameterName = ":heshsum";
+            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
+            param.Size = 100;
+            param.IsNullable = true;
+            param.SourceColumn = "HESHSUM";
+            this._commandCollection[4].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4436,7 +4537,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_ID, string Original_HESHSUM, string Original_POST) {
+        public virtual int Delete(long Original_ID, string Original_HESHSUM, string Original_POST, string Original_ENUM) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_ID));
             if ((Original_HESHSUM == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -4453,6 +4554,13 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_POST));
+            }
+            if ((Original_ENUM == null)) {
+                throw new global::System.ArgumentNullException("Original_ENUM");
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_ENUM));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4474,7 +4582,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long ID, string HESHSUM, string POST) {
+        public virtual int Insert(long ID, string HESHSUM, string POST, string ENUM) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(ID));
             if ((HESHSUM == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -4487,6 +4595,12 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(POST));
+            }
+            if ((ENUM == null)) {
+                throw new global::System.ArgumentNullException("ENUM");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(ENUM));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4508,7 +4622,7 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(long ID, string HESHSUM, string POST, long Original_ID, string Original_HESHSUM, string Original_POST) {
+        public virtual int Update(long ID, string HESHSUM, string POST, string ENUM, long Original_ID, string Original_HESHSUM, string Original_POST, string Original_ENUM) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(ID));
             if ((HESHSUM == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -4522,22 +4636,35 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(POST));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((long)(Original_ID));
-            if ((Original_HESHSUM == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            if ((ENUM == null)) {
+                throw new global::System.ArgumentNullException("ENUM");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_HESHSUM));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(ENUM));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((long)(Original_ID));
+            if ((Original_HESHSUM == null)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_HESHSUM));
             }
             if ((Original_POST == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_POST));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_POST));
+            }
+            if ((Original_ENUM == null)) {
+                throw new global::System.ArgumentNullException("Original_ENUM");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_ENUM));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4559,8 +4686,8 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string HESHSUM, string POST, long Original_ID, string Original_HESHSUM, string Original_POST) {
-            return this.Update(Original_ID, HESHSUM, POST, Original_ID, Original_HESHSUM, Original_POST);
+        public virtual int Update(string HESHSUM, string POST, string ENUM, long Original_ID, string Original_HESHSUM, string Original_POST, string Original_ENUM) {
+            return this.Update(Original_ID, HESHSUM, POST, ENUM, Original_ID, Original_HESHSUM, Original_POST, Original_ENUM);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4628,6 +4755,40 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             }
             else {
                 return ((string)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object ScalarQuery1(string heshsum) {
+            global::Oracle.ManagedDataAccess.Client.OracleCommand command = this.CommandCollection[4];
+            if ((heshsum == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(heshsum));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
             }
         }
     }

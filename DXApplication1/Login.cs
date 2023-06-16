@@ -39,11 +39,13 @@ namespace DXApplication1
                 string hesh = this.dataSet11.GetStringHashSum(textEdit1.Text, textEdit2.Text);
                 OracleConnection myOraConnection= this.dataSet11.MyOraConnection;
                 string post = this.dataSet11.USERS.FillBy(this.dataSet11.MyOraConnection, hesh);
+                string emplnum = this.dataSet11.USERS.FindENUM(myOraConnection, hesh);
                 switch (this.dataSet11.USERS.FindByHash(myOraConnection, hesh))
                 {
                     case true:
                         Glavn glavn = new Glavn();
                         glavn.post = post;
+                        glavn.emplnum = emplnum;
                         glavn.Show();
                         this.Hide();
                         break;

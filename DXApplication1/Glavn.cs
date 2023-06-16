@@ -19,6 +19,7 @@ using Microsoft.Office.Interop.Word;
 using DevExpress.XtraPrinting.Preview.Native;
 using DevExpress.XtraSplashScreen;
 using DevExpress.XtraReports.UI;
+using System.Data.OracleClient;
 
 namespace DXApplication1
 {
@@ -26,6 +27,7 @@ namespace DXApplication1
     {
         public Form1 form1 = null;
         public string post = null;
+        public string emplnum = null;
         Form2 form2 = null;
         Form4 form4 = null;
         ClassLibrary1.Report report=new ClassLibrary1.Report(new Dictionary<string, string>());
@@ -36,6 +38,7 @@ namespace DXApplication1
             SplashScreenManager.ShowForm(typeof(WaitForm1));            
             InitializeComponent();
             SplashScreenManager.CloseForm();
+            
         }
 
         private void Glavn_FormClosed(object sender, FormClosedEventArgs e)
@@ -163,7 +166,6 @@ namespace DXApplication1
             form1.MdiParent = this;
             form1.Show();
             SplashScreenManager.CloseForm();*/
-
         }
 
         private void instanceHasBeenClosed(object sender, FormClosedEventArgs e)

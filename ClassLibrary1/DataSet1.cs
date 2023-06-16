@@ -139,6 +139,14 @@ namespace ClassLibrary1
 
         partial class USERSDataTable
         {
+            public string FindENUM(OracleConnection OraConnection, string hashSum)
+            {
+                using (DataSet1TableAdapters.USERSTableAdapter ta = new DataSet1TableAdapters.USERSTableAdapter())
+                {
+                    return ta.ScalarQuery1(hashSum).ToString();
+                }
+            }
+
             public string FillBy(OracleConnection OraConnection, string hashSum)
             {
                 using (DataSet1TableAdapters.USERSTableAdapter ta = new DataSet1TableAdapters.USERSTableAdapter())
@@ -146,6 +154,7 @@ namespace ClassLibrary1
                     return ta.ScalarQuery(hashSum);
                 }
             }
+
             public bool FindByHash(OracleConnection OraConnection, string hashSum)
             {
                 using (DataSet1TableAdapters.USERSTableAdapter ta = new DataSet1TableAdapters.USERSTableAdapter())
