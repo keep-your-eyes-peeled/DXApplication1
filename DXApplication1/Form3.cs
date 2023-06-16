@@ -19,6 +19,7 @@ namespace DXApplication1
         public DataSet1.INCDOCDataTable IncDoc = new DataSet1.INCDOCDataTable();
         public DataSet1.INCDOCSDataTable docs = null;
         string repnum = "";
+        public string emplnum = null;
         string fileName = null;
         string filePath = null;
         public Form3(string _repnum, DataSet1.INCDOCSDataTable _docs)
@@ -34,9 +35,9 @@ namespace DXApplication1
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if(openFileDialog.ShowDialog() == DialogResult.OK )
             {
-                labelControl1.Text = openFileDialog.FileName;
                 fileName = System.IO.Path.GetFileName(openFileDialog.FileName);
                 filePath = System.IO.Path.GetFullPath(openFileDialog.FileName);
+                labelControl1.Text = openFileDialog.FileName;                                          
             }
         }
 
@@ -51,6 +52,7 @@ namespace DXApplication1
 
             docsRow.PATH = labelControl1.Text;
             docsRow.REPNUM = this.repnum;
+            docsRow.CREATORENUM = emplnum;
 
 
             docs.AddINCDOCSRow(((DataSet1.INCDOCSRow)((DataRowView)bs2.Current).Row));
@@ -73,7 +75,15 @@ namespace DXApplication1
             IncDoc.AddINCDOCRow(((DataSet1.INCDOCRow)((DataRowView)bindingSource1.Current).Row));
             bindingSource1.EndEdit();
 
-            File.Copy(filePath, $@"D:\Документы\Входящие документы\{fileName}");
+            if (File.Exists($@"D:\Документы\Входящие документы\{fileName}") == false)
+            {
+                File.Copy(filePath, $@"D:\Документы\Входящие документы\{fileName}");
+            }
+            else
+            {
+                File.Copy(filePath, $@"D:\Документы\Входящие документы\(copy{new Random().Next(1,100000)}){fileName}");
+            }
+
 
             this.Close();
         }

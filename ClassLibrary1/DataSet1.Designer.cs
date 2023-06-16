@@ -4988,33 +4988,25 @@ namespace ClassLibrary1.DataSet1TableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::Oracle.ManagedDataAccess.Client.OracleCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO \"C##ADMIN\".\"INCDOCS\" (\"ID\", \"REPNUM\", \"PATH\", \"CREATORENUM\") VALUES (" +
-                ":ID, :REPNUM, :PATH, :CREATORENUM)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO \"C##ADMIN\".\"INCDOCS\" (\"REPNUM\", \"PATH\", \"CREATORENUM\") VALUES (:REPNU" +
+                "M, :PATH, :CREATORENUM)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "ID";
-            param.DbType = global::System.Data.DbType.Int64;
-            param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Int64;
-            param.Size = 22;
-            param.IsNullable = true;
-            param.SourceColumn = "ID";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "REPNUM";
+            param.ParameterName = ":REPNUM";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 20;
             param.IsNullable = true;
             param.SourceColumn = "REPNUM";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "PATH";
+            param.ParameterName = ":PATH";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 100;
             param.IsNullable = true;
             param.SourceColumn = "PATH";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::Oracle.ManagedDataAccess.Client.OracleParameter();
-            param.ParameterName = "CREATORENUM";
+            param.ParameterName = ":CREATORENUM";
             param.OracleDbTypeEx = global::Oracle.ManagedDataAccess.Client.OracleDbType.Varchar2;
             param.Size = 100;
             param.IsNullable = true;
@@ -5211,25 +5203,24 @@ namespace ClassLibrary1.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long ID, string REPNUM, string PATH, string CREATORENUM) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((long)(ID));
+        public virtual int Insert(string REPNUM, string PATH, string CREATORENUM) {
             if ((REPNUM == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(REPNUM));
+            }
+            if ((PATH == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(REPNUM));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(PATH));
             }
-            if ((PATH == null)) {
+            if ((CREATORENUM == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(PATH));
-            }
-            if ((CREATORENUM == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(CREATORENUM));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(CREATORENUM));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

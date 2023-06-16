@@ -13,6 +13,7 @@ namespace DXApplication1
 {
     public partial class Form2 : Form
     {
+        public string emplnum = null;
         public Form2()
         {
             InitializeComponent();

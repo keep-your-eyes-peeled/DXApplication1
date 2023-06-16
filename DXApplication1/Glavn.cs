@@ -100,6 +100,7 @@ namespace DXApplication1
             form1 = new Form1();
             form1.Text = "Отчет " + Counter++;
             form1.MdiParent = this;
+            form1.emplnum = emplnum;
             form1.Show();
             SplashScreenManager.CloseForm();            
         }
@@ -130,6 +131,7 @@ namespace DXApplication1
             {
                 form4 = new Form4();
                 form4.FormClosed += instanceHasBeenClosed;
+                form4.emplnum = emplnum;
                 form4.MdiParent = this;
                 form4.Show();
             }
@@ -149,6 +151,7 @@ namespace DXApplication1
                 form2 = new Form2();
                 form2.FormClosed += instanceHasBeenClosed;
                 form2.MdiParent = this;
+                form2.emplnum = emplnum;
                 form2.Show();
             }
             else

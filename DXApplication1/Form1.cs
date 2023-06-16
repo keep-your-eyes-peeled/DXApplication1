@@ -20,6 +20,8 @@ namespace DXApplication1
         private ClassLibrary1.Report report;
         
         public Report Report { get => report; set => report = value; }
+
+        public string emplnum =null;
         
 
         
@@ -369,6 +371,7 @@ namespace DXApplication1
 
             Row.NUM = report.FieldValues["Номер"];
             Row.PATH = @"D:\Документы\Отчеты";
+            Row.CREATORENUM = emplnum;
 
 
             this.dataSet11.REPORTS.AddREPORTSRow(((DataSet1.REPORTSRow)((DataRowView)bs1.Current).Row));
@@ -392,6 +395,7 @@ namespace DXApplication1
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             
             Form3 form3 = new Form3(textBox1.Text, this.dataSet11.INCDOCS);
+            form3.emplnum = emplnum;
             form3.ShowDialog();
             
             this.dataSet11.INCDOC.Merge(form3.IncDoc);

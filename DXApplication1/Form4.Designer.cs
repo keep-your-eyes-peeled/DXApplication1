@@ -39,6 +39,7 @@
             this.colPATH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colCREATORENUM = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -87,7 +88,8 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colID,
             this.colREPNUM,
-            this.colPATH});
+            this.colPATH,
+            this.colCREATORENUM});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -103,7 +105,7 @@
             this.colREPNUM.FieldName = "REPNUM";
             this.colREPNUM.Name = "colREPNUM";
             this.colREPNUM.Visible = true;
-            this.colREPNUM.VisibleIndex = 0;
+            this.colREPNUM.VisibleIndex = 1;
             // 
             // colPATH
             // 
@@ -111,7 +113,7 @@
             this.colPATH.FieldName = "PATH";
             this.colPATH.Name = "colPATH";
             this.colPATH.Visible = true;
-            this.colPATH.VisibleIndex = 1;
+            this.colPATH.VisibleIndex = 2;
             // 
             // Root
             // 
@@ -131,6 +133,14 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(780, 430);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
+            // 
+            // colCREATORENUM
+            // 
+            this.colCREATORENUM.Caption = "Таб. номер сотрудника";
+            this.colCREATORENUM.FieldName = "CREATORENUM";
+            this.colCREATORENUM.Name = "colCREATORENUM";
+            this.colCREATORENUM.Visible = true;
+            this.colCREATORENUM.VisibleIndex = 0;
             // 
             // Form4
             // 
@@ -165,5 +175,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colREPNUM;
         private DevExpress.XtraGrid.Columns.GridColumn colPATH;
+        private DevExpress.XtraGrid.Columns.GridColumn colCREATORENUM;
     }
 }
