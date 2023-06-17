@@ -118,8 +118,9 @@
             // simpleButton2
             // 
             this.simpleButton2.Location = new System.Drawing.Point(12, 257);
+            this.simpleButton2.MaximumSize = new System.Drawing.Size(150, 22);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(460, 22);
+            this.simpleButton2.Size = new System.Drawing.Size(150, 22);
             this.simpleButton2.StyleController = this.layoutControl1;
             this.simpleButton2.TabIndex = 14;
             this.simpleButton2.Text = "Добавить";
@@ -202,8 +203,9 @@
             // simpleButton1
             // 
             this.simpleButton1.Location = new System.Drawing.Point(12, 46);
+            this.simpleButton1.MaximumSize = new System.Drawing.Size(150, 22);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(460, 22);
+            this.simpleButton1.Size = new System.Drawing.Size(150, 22);
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "Указать файл";
@@ -233,6 +235,8 @@
             // 
             // layoutControlItem1
             // 
+            this.layoutControlItem1.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.layoutControlItem1.ContentVertAlignment = DevExpress.Utils.VertAlignment.Center;
             this.layoutControlItem1.Control = this.simpleButton1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 34);
             this.layoutControlItem1.Name = "layoutControlItem1";
@@ -331,6 +335,8 @@
             // 
             // layoutControlItem11
             // 
+            this.layoutControlItem11.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.layoutControlItem11.ContentVertAlignment = DevExpress.Utils.VertAlignment.Center;
             this.layoutControlItem11.Control = this.simpleButton2;
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 245);
             this.layoutControlItem11.Name = "layoutControlItem11";

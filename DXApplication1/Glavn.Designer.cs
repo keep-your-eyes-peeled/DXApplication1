@@ -70,6 +70,7 @@
             this.barManager1.DockControls.Add(this.barDockControlBottom);
             this.barManager1.DockControls.Add(this.barDockControlLeft);
             this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.DockWindowTabFont = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.barButtonItem1,
@@ -83,6 +84,8 @@
             this.barButtonItem7});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 17;
+            this.barManager1.OptionsStubGlyphs.Font = new System.Drawing.Font("Tahoma", 14.25F);
+            this.barManager1.OptionsStubGlyphs.UseFont = true;
             // 
             // bar2
             // 
@@ -216,6 +219,7 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.IsMdiContainer = true;
             this.Name = "Glavn";
             this.Text = "Главное окно";

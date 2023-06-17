@@ -43,8 +43,8 @@ namespace DXApplication1
             this.colPATH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCREATORENUM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAPPROVED = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.repositoryItemToggleSwitch1 = new DevExpress.XtraEditors.Repository.RepositoryItemToggleSwitch();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -56,8 +56,8 @@ namespace DXApplication1
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
@@ -78,9 +78,10 @@ namespace DXApplication1
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 12);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 416);
+            this.simpleButton1.MaximumSize = new System.Drawing.Size(150, 22);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(776, 22);
+            this.simpleButton1.Size = new System.Drawing.Size(150, 22);
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 4;
             this.simpleButton1.Text = "Сохранить";
@@ -89,7 +90,7 @@ namespace DXApplication1
             // gridControl1
             // 
             this.gridControl1.DataSource = this.bindingSource1;
-            this.gridControl1.Location = new System.Drawing.Point(12, 38);
+            this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -121,6 +122,10 @@ namespace DXApplication1
             this.colAPPROVED});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsFind.FindDelay = 500;
+            this.gridView1.OptionsFind.FindNullPrompt = "Введите текст для поиска...";
+            this.gridView1.OptionsFind.ShowFindButton = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
             this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
@@ -165,17 +170,17 @@ namespace DXApplication1
             this.colAPPROVED.Visible = true;
             this.colAPPROVED.VisibleIndex = 3;
             // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            // 
             // repositoryItemToggleSwitch1
             // 
             this.repositoryItemToggleSwitch1.AutoHeight = false;
             this.repositoryItemToggleSwitch1.Name = "repositoryItemToggleSwitch1";
             this.repositoryItemToggleSwitch1.OffText = "Off";
             this.repositoryItemToggleSwitch1.OnText = "On";
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
             // Root
             // 
@@ -191,7 +196,7 @@ namespace DXApplication1
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.gridControl1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(780, 404);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
@@ -199,8 +204,10 @@ namespace DXApplication1
             // 
             // layoutControlItem2
             // 
+            this.layoutControlItem2.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.layoutControlItem2.ContentVertAlignment = DevExpress.Utils.VertAlignment.Center;
             this.layoutControlItem2.Control = this.simpleButton1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 404);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(780, 26);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
@@ -226,8 +233,8 @@ namespace DXApplication1
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemToggleSwitch1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();

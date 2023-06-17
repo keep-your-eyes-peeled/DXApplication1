@@ -60,8 +60,8 @@ namespace ClassLibrary1
         {
             OracleConnectionStringBuilder connectionStringBuilder = new OracleConnectionStringBuilder();
             connectionStringBuilder.DataSource = "localhost:1521/xe";
-            connectionStringBuilder.UserID = "system";
-            connectionStringBuilder.Password = "123456Qwer";
+            connectionStringBuilder.UserID = "c##admin";
+            connectionStringBuilder.Password = "admin";
             return connectionStringBuilder.ConnectionString;
         }
 

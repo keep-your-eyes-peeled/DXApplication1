@@ -1862,6 +1862,13 @@ namespace ClassLibrary1 {
                 base.Columns.Add(this.columnDebet);
                 this.columnKredit = new global::System.Data.DataColumn("Kredit", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKredit);
+                this.columnDate.AllowDBNull = false;
+                this.columnNumber.AllowDBNull = false;
+                this.columnTitle.AllowDBNull = false;
+                this.columnSum1.AllowDBNull = false;
+                this.columnSum2.AllowDBNull = false;
+                this.columnDebet.AllowDBNull = false;
+                this.columnKredit.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2502,12 +2509,7 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Date {
                 get {
-                    try {
-                        return ((string)(this[this.tableINCDOC.DateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Date\' в таблице \'INCDOC\' равно DBNull.", e);
-                    }
+                    return ((string)(this[this.tableINCDOC.DateColumn]));
                 }
                 set {
                     this[this.tableINCDOC.DateColumn] = value;
@@ -2518,12 +2520,7 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Number {
                 get {
-                    try {
-                        return ((string)(this[this.tableINCDOC.NumberColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Number\' в таблице \'INCDOC\' равно DBNull.", e);
-                    }
+                    return ((string)(this[this.tableINCDOC.NumberColumn]));
                 }
                 set {
                     this[this.tableINCDOC.NumberColumn] = value;
@@ -2534,12 +2531,7 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Title {
                 get {
-                    try {
-                        return ((string)(this[this.tableINCDOC.TitleColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Title\' в таблице \'INCDOC\' равно DBNull.", e);
-                    }
+                    return ((string)(this[this.tableINCDOC.TitleColumn]));
                 }
                 set {
                     this[this.tableINCDOC.TitleColumn] = value;
@@ -2550,12 +2542,7 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Sum1 {
                 get {
-                    try {
-                        return ((string)(this[this.tableINCDOC.Sum1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Sum1\' в таблице \'INCDOC\' равно DBNull.", e);
-                    }
+                    return ((string)(this[this.tableINCDOC.Sum1Column]));
                 }
                 set {
                     this[this.tableINCDOC.Sum1Column] = value;
@@ -2566,12 +2553,7 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Sum2 {
                 get {
-                    try {
-                        return ((string)(this[this.tableINCDOC.Sum2Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Sum2\' в таблице \'INCDOC\' равно DBNull.", e);
-                    }
+                    return ((string)(this[this.tableINCDOC.Sum2Column]));
                 }
                 set {
                     this[this.tableINCDOC.Sum2Column] = value;
@@ -2582,12 +2564,7 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Debet {
                 get {
-                    try {
-                        return ((string)(this[this.tableINCDOC.DebetColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Debet\' в таблице \'INCDOC\' равно DBNull.", e);
-                    }
+                    return ((string)(this[this.tableINCDOC.DebetColumn]));
                 }
                 set {
                     this[this.tableINCDOC.DebetColumn] = value;
@@ -2598,100 +2575,11 @@ namespace ClassLibrary1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Kredit {
                 get {
-                    try {
-                        return ((string)(this[this.tableINCDOC.KreditColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Kredit\' в таблице \'INCDOC\' равно DBNull.", e);
-                    }
+                    return ((string)(this[this.tableINCDOC.KreditColumn]));
                 }
                 set {
                     this[this.tableINCDOC.KreditColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDateNull() {
-                return this.IsNull(this.tableINCDOC.DateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDateNull() {
-                this[this.tableINCDOC.DateColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsNumberNull() {
-                return this.IsNull(this.tableINCDOC.NumberColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetNumberNull() {
-                this[this.tableINCDOC.NumberColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsTitleNull() {
-                return this.IsNull(this.tableINCDOC.TitleColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetTitleNull() {
-                this[this.tableINCDOC.TitleColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSum1Null() {
-                return this.IsNull(this.tableINCDOC.Sum1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSum1Null() {
-                this[this.tableINCDOC.Sum1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSum2Null() {
-                return this.IsNull(this.tableINCDOC.Sum2Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSum2Null() {
-                this[this.tableINCDOC.Sum2Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsDebetNull() {
-                return this.IsNull(this.tableINCDOC.DebetColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetDebetNull() {
-                this[this.tableINCDOC.DebetColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsKreditNull() {
-                return this.IsNull(this.tableINCDOC.KreditColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetKreditNull() {
-                this[this.tableINCDOC.KreditColumn] = global::System.Convert.DBNull;
             }
         }
         

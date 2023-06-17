@@ -38,7 +38,7 @@ namespace DXApplication1
             SplashScreenManager.ShowForm(typeof(WaitForm1));            
             InitializeComponent();
             SplashScreenManager.CloseForm();
-            
+            //this.Font = new System.Drawing.Font("Tahoma", 14, FontStyle.Bold);
         }
 
         private void Glavn_FormClosed(object sender, FormClosedEventArgs e)

@@ -30,19 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet11 = new ClassLibrary1.DataSet1();
             this.advBandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.AdvBandedGridView();
+            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colDate = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colNumber = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colTitle = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colSum1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colSum2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colDebet = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colKredit = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
@@ -53,17 +56,16 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridColumn1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -73,10 +75,8 @@
             this.gridBand3 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.gridBand2 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::DXApplication1.WaitForm1), true, true);
-            this.colKredit = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.gridBand1 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand4 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
-            this.gridBand5 = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -93,55 +93,43 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
             this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(139, 36);
+            this.textBox1.Location = new System.Drawing.Point(601, 12);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(773, 20);
+            this.textBox1.Size = new System.Drawing.Size(311, 20);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "1";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 485);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(900, 44);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Подтвердить";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
             this.textBox2.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Location = new System.Drawing.Point(139, 12);
+            this.textBox2.Location = new System.Drawing.Point(149, 12);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(773, 20);
+            this.textBox2.Size = new System.Drawing.Size(311, 20);
             this.textBox2.TabIndex = 3;
-            this.textBox2.Text = "1";
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.simpleButton2);
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Controls.Add(this.textEdit5);
             this.layoutControl1.Controls.Add(this.textEdit4);
             this.layoutControl1.Controls.Add(this.textEdit1);
             this.layoutControl1.Controls.Add(this.simpleButton1);
-            this.layoutControl1.Controls.Add(this.button1);
             this.layoutControl1.Controls.Add(this.textBox2);
             this.layoutControl1.Controls.Add(this.textBox1);
             this.layoutControl1.Controls.Add(this.textBox111);
@@ -159,10 +147,10 @@
             // gridControl1
             // 
             this.gridControl1.DataSource = this.bindingSource1;
-            this.gridControl1.Location = new System.Drawing.Point(12, 206);
+            this.gridControl1.Location = new System.Drawing.Point(12, 134);
             this.gridControl1.MainView = this.advBandedGridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(900, 275);
+            this.gridControl1.Size = new System.Drawing.Size(900, 387);
             this.gridControl1.TabIndex = 11;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.advBandedGridView1});
@@ -196,6 +184,15 @@
             this.advBandedGridView1.Name = "advBandedGridView1";
             this.advBandedGridView1.OptionsView.ShowGroupPanel = false;
             // 
+            // gridBand1
+            // 
+            this.gridBand1.Columns.Add(this.colDate);
+            this.gridBand1.Columns.Add(this.colNumber);
+            this.gridBand1.Columns.Add(this.colTitle);
+            this.gridBand1.Name = "gridBand1";
+            this.gridBand1.VisibleIndex = 0;
+            this.gridBand1.Width = 225;
+            // 
             // colDate
             // 
             this.colDate.Caption = "Дата";
@@ -217,6 +214,15 @@
             this.colTitle.Name = "colTitle";
             this.colTitle.Visible = true;
             // 
+            // gridBand4
+            // 
+            this.gridBand4.Caption = "Сумма расхода";
+            this.gridBand4.Columns.Add(this.colSum1);
+            this.gridBand4.Columns.Add(this.colSum2);
+            this.gridBand4.Name = "gridBand4";
+            this.gridBand4.VisibleIndex = 1;
+            this.gridBand4.Width = 150;
+            // 
             // colSum1
             // 
             this.colSum1.Caption = "По отчету";
@@ -231,6 +237,14 @@
             this.colSum2.Name = "colSum2";
             this.colSum2.Visible = true;
             // 
+            // gridBand5
+            // 
+            this.gridBand5.Columns.Add(this.colDebet);
+            this.gridBand5.Columns.Add(this.colKredit);
+            this.gridBand5.Name = "gridBand5";
+            this.gridBand5.VisibleIndex = 2;
+            this.gridBand5.Width = 150;
+            // 
             // colDebet
             // 
             this.colDebet.Caption = "Дебет счета, субсчета";
@@ -238,62 +252,69 @@
             this.colDebet.Name = "colDebet";
             this.colDebet.Visible = true;
             // 
+            // colKredit
+            // 
+            this.colKredit.Caption = "Кредит счета, субсчета";
+            this.colKredit.FieldName = "Kredit";
+            this.colKredit.Name = "colKredit";
+            this.colKredit.Visible = true;
+            // 
             // textEdit5
             // 
-            this.textEdit5.EditValue = "0";
-            this.textEdit5.Location = new System.Drawing.Point(627, 156);
+            this.textEdit5.EditValue = "";
+            this.textEdit5.Location = new System.Drawing.Point(601, 84);
             this.textEdit5.Name = "textEdit5";
             this.textEdit5.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.textEdit5.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit5.Size = new System.Drawing.Size(285, 20);
+            this.textEdit5.Size = new System.Drawing.Size(311, 20);
             this.textEdit5.StyleController = this.layoutControl1;
             this.textEdit5.TabIndex = 10;
             // 
             // textEdit4
             // 
-            this.textEdit4.EditValue = "0";
-            this.textEdit4.Location = new System.Drawing.Point(269, 156);
+            this.textEdit4.EditValue = "";
+            this.textEdit4.Location = new System.Drawing.Point(288, 84);
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.textEdit4.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit4.Size = new System.Drawing.Size(227, 20);
+            this.textEdit4.Size = new System.Drawing.Size(172, 20);
             this.textEdit4.StyleController = this.layoutControl1;
             this.textEdit4.TabIndex = 9;
             // 
             // textEdit1
             // 
-            this.textEdit1.EditValue = "1";
-            this.textEdit1.Location = new System.Drawing.Point(139, 108);
+            this.textEdit1.EditValue = "";
+            this.textEdit1.Location = new System.Drawing.Point(601, 60);
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit1.Size = new System.Drawing.Size(773, 20);
+            this.textEdit1.Size = new System.Drawing.Size(311, 20);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 6;
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 180);
+            this.simpleButton1.Location = new System.Drawing.Point(12, 108);
+            this.simpleButton1.MaximumSize = new System.Drawing.Size(200, 22);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(900, 22);
+            this.simpleButton1.Size = new System.Drawing.Size(200, 22);
             this.simpleButton1.StyleController = this.layoutControl1;
             this.simpleButton1.TabIndex = 5;
-            this.simpleButton1.Text = "Добавить подтв. документ";
+            this.simpleButton1.Text = "Добавить входящий документ";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // textBox111
             // 
             this.textBox111.ForeColor = System.Drawing.Color.Black;
-            this.textBox111.Location = new System.Drawing.Point(139, 84);
+            this.textBox111.Location = new System.Drawing.Point(149, 60);
             this.textBox111.Name = "textBox111";
-            this.textBox111.Size = new System.Drawing.Size(773, 20);
+            this.textBox111.Size = new System.Drawing.Size(311, 20);
             this.textBox111.TabIndex = 0;
-            this.textBox111.Text = "1";
             // 
             // textEdit2
             // 
-            this.textEdit2.EditValue = new System.DateTime(2023, 5, 18, 0, 1, 24, 0);
-            this.textEdit2.Location = new System.Drawing.Point(139, 132);
+            this.textEdit2.EditValue = new System.DateTime(2023, 1, 1, 0, 1, 24, 0);
+            this.textEdit2.Location = new System.Drawing.Point(601, 36);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.textEdit2.Properties.Appearance.Options.UseForeColor = true;
@@ -301,20 +322,18 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.textEdit2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.textEdit2.Properties.DisplayFormat.FormatString = "";
-            this.textEdit2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.textEdit2.Properties.EditFormat.FormatString = "";
             this.textEdit2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.textEdit2.Properties.MaskSettings.Set("mask", "");
             this.textEdit2.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.textEdit2.Size = new System.Drawing.Size(773, 20);
+            this.textEdit2.Size = new System.Drawing.Size(311, 20);
             this.textEdit2.StyleController = this.layoutControl1;
             this.textEdit2.TabIndex = 7;
             // 
             // textEdit3
             // 
-            this.textEdit3.EditValue = new System.DateTime(2023, 5, 18, 12, 21, 41, 0);
-            this.textEdit3.Location = new System.Drawing.Point(139, 60);
+            this.textEdit3.EditValue = new System.DateTime(2023, 1, 1, 12, 21, 41, 0);
+            this.textEdit3.Location = new System.Drawing.Point(149, 36);
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.textEdit3.Properties.Appearance.Options.UseForeColor = true;
@@ -322,13 +341,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.textEdit3.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.textEdit3.Properties.DisplayFormat.FormatString = "";
-            this.textEdit3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.textEdit3.Properties.EditFormat.FormatString = "";
             this.textEdit3.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.textEdit3.Properties.MaskSettings.Set("mask", "");
             this.textEdit3.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
-            this.textEdit3.Size = new System.Drawing.Size(773, 20);
+            this.textEdit3.Size = new System.Drawing.Size(311, 20);
             this.textEdit3.StyleController = this.layoutControl1;
             this.textEdit3.TabIndex = 8;
             // 
@@ -339,17 +356,17 @@
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
             this.emptySpaceItem1,
-            this.layoutControlItem2,
-            this.layoutControlItem3,
             this.layoutControlItem6,
-            this.layoutControlItem7,
-            this.layoutControlItem8,
-            this.layoutControlItem9,
             this.layoutControlItem10,
             this.layoutControlItem4,
             this.layoutControlItem11,
             this.simpleLabelItem1,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem2,
+            this.layoutControlItem7,
+            this.layoutControlItem9,
+            this.layoutControlItem8,
+            this.layoutControlItem12});
             this.Root.Name = "Root";
             this.Root.Size = new System.Drawing.Size(924, 569);
             this.Root.TextVisible = false;
@@ -359,118 +376,111 @@
             this.layoutControlItem1.Control = this.textBox2;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(904, 24);
+            this.layoutControlItem1.Size = new System.Drawing.Size(452, 24);
             this.layoutControlItem1.Text = "Табельный номер";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(115, 13);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(125, 13);
             // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 521);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 539);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(904, 28);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(904, 10);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.textBox1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(904, 24);
-            this.layoutControlItem2.Text = "Номер отчета";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(115, 13);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.button1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 473);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(904, 48);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
             // 
             // layoutControlItem6
             // 
+            this.layoutControlItem6.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.layoutControlItem6.ContentVertAlignment = DevExpress.Utils.VertAlignment.Center;
             this.layoutControlItem6.Control = this.simpleButton1;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 168);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 96);
             this.layoutControlItem6.Name = "layoutControlItem6";
             this.layoutControlItem6.Size = new System.Drawing.Size(904, 26);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.Control = this.textEdit3;
+            this.layoutControlItem10.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem10.Name = "layoutControlItem10";
+            this.layoutControlItem10.Size = new System.Drawing.Size(452, 24);
+            this.layoutControlItem10.Text = "Дата создания отчета";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(125, 13);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.textEdit4;
+            this.layoutControlItem4.Location = new System.Drawing.Point(139, 72);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(313, 24);
+            this.layoutControlItem4.Text = "Остаток, руб.";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(125, 13);
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.Control = this.textEdit5;
+            this.layoutControlItem11.Location = new System.Drawing.Point(452, 72);
+            this.layoutControlItem11.Name = "layoutControlItem11";
+            this.layoutControlItem11.Size = new System.Drawing.Size(452, 24);
+            this.layoutControlItem11.Text = "Перерасход, руб.";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(125, 13);
+            // 
+            // simpleLabelItem1
+            // 
+            this.simpleLabelItem1.AllowHotTrack = false;
+            this.simpleLabelItem1.Location = new System.Drawing.Point(0, 72);
+            this.simpleLabelItem1.Name = "simpleLabelItem1";
+            this.simpleLabelItem1.Size = new System.Drawing.Size(139, 24);
+            this.simpleLabelItem1.Text = "Предыдущий аванс";
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(125, 13);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.gridControl1;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 122);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(904, 391);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.textBox1;
+            this.layoutControlItem2.Location = new System.Drawing.Point(452, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(452, 24);
+            this.layoutControlItem2.Text = "Номер отчета";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(125, 13);
             // 
             // layoutControlItem7
             // 
             this.layoutControlItem7.Control = this.textBox111;
             this.layoutControlItem7.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem7.CustomizationFormText = "Номер";
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 48);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(904, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(452, 24);
             this.layoutControlItem7.Text = "Назначение аванса";
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(115, 13);
-            // 
-            // layoutControlItem8
-            // 
-            this.layoutControlItem8.Control = this.textEdit1;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 96);
-            this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(904, 24);
-            this.layoutControlItem8.Text = "Получено из кассы";
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(115, 13);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(125, 13);
             // 
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.textEdit2;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 120);
+            this.layoutControlItem9.Location = new System.Drawing.Point(452, 24);
             this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.Size = new System.Drawing.Size(904, 24);
+            this.layoutControlItem9.Size = new System.Drawing.Size(452, 24);
             this.layoutControlItem9.Text = "Дата утверждения";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(115, 13);
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(125, 13);
             // 
-            // layoutControlItem10
+            // layoutControlItem8
             // 
-            this.layoutControlItem10.Control = this.textEdit3;
-            this.layoutControlItem10.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(904, 24);
-            this.layoutControlItem10.Text = "Дата создания отчета";
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(115, 13);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.textEdit4;
-            this.layoutControlItem4.Location = new System.Drawing.Point(130, 144);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(358, 24);
-            this.layoutControlItem4.Text = "Остаток";
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(115, 13);
-            // 
-            // layoutControlItem11
-            // 
-            this.layoutControlItem11.Control = this.textEdit5;
-            this.layoutControlItem11.Location = new System.Drawing.Point(488, 144);
-            this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(416, 24);
-            this.layoutControlItem11.Text = "Перерасход";
-            this.layoutControlItem11.TextSize = new System.Drawing.Size(115, 13);
-            // 
-            // simpleLabelItem1
-            // 
-            this.simpleLabelItem1.AllowHotTrack = false;
-            this.simpleLabelItem1.Location = new System.Drawing.Point(0, 144);
-            this.simpleLabelItem1.Name = "simpleLabelItem1";
-            this.simpleLabelItem1.Size = new System.Drawing.Size(130, 24);
-            this.simpleLabelItem1.Text = "Предыдущий аванс";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(115, 13);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.gridControl1;
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 194);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(904, 279);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
+            this.layoutControlItem8.Control = this.textEdit1;
+            this.layoutControlItem8.Location = new System.Drawing.Point(452, 48);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(452, 24);
+            this.layoutControlItem8.Text = "Получено из кассы, руб.";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(125, 13);
             // 
             // gridColumn1
             // 
@@ -536,38 +546,25 @@
             // 
             this.splashScreenManager1.ClosingDelay = 500;
             // 
-            // colKredit
+            // simpleButton2
             // 
-            this.colKredit.Caption = "Кредит счета, субсчета";
-            this.colKredit.FieldName = "Kredit";
-            this.colKredit.Name = "colKredit";
-            this.colKredit.Visible = true;
+            this.simpleButton2.Location = new System.Drawing.Point(12, 525);
+            this.simpleButton2.MaximumSize = new System.Drawing.Size(150, 22);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(150, 22);
+            this.simpleButton2.StyleController = this.layoutControl1;
+            this.simpleButton2.TabIndex = 12;
+            this.simpleButton2.Text = "Подтвердить";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
-            // gridBand1
+            // layoutControlItem12
             // 
-            this.gridBand1.Columns.Add(this.colDate);
-            this.gridBand1.Columns.Add(this.colNumber);
-            this.gridBand1.Columns.Add(this.colTitle);
-            this.gridBand1.Name = "gridBand1";
-            this.gridBand1.VisibleIndex = 0;
-            this.gridBand1.Width = 225;
-            // 
-            // gridBand4
-            // 
-            this.gridBand4.Caption = "Сумма расхода";
-            this.gridBand4.Columns.Add(this.colSum1);
-            this.gridBand4.Columns.Add(this.colSum2);
-            this.gridBand4.Name = "gridBand4";
-            this.gridBand4.VisibleIndex = 1;
-            this.gridBand4.Width = 150;
-            // 
-            // gridBand5
-            // 
-            this.gridBand5.Columns.Add(this.colDebet);
-            this.gridBand5.Columns.Add(this.colKredit);
-            this.gridBand5.Name = "gridBand5";
-            this.gridBand5.VisibleIndex = 2;
-            this.gridBand5.Width = 150;
+            this.layoutControlItem12.Control = this.simpleButton2;
+            this.layoutControlItem12.Location = new System.Drawing.Point(0, 513);
+            this.layoutControlItem12.Name = "layoutControlItem12";
+            this.layoutControlItem12.Size = new System.Drawing.Size(904, 26);
+            this.layoutControlItem12.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem12.TextVisible = false;
             // 
             // Form1
             // 
@@ -595,17 +592,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -613,14 +610,12 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox2;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private System.Windows.Forms.BindingSource bindingSource1;
@@ -660,6 +655,8 @@
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand4;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand gridBand5;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colKredit;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
     }
 }
 

@@ -422,7 +422,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="APPROVED" msprop:Generator_UserColumnName="APPROVED" msprop:Generator_ColumnPropNameInTable="APPROVEDColumn" msprop:Generator_ColumnPropNameInRow="APPROVED" msprop:Generator_ColumnVarNameInTable="columnAPPROVED" type="xs:boolean" minOccurs="0" />
+              <xs:element name="APPROVED" msprop:Generator_ColumnPropNameInTable="APPROVEDColumn" msprop:Generator_ColumnPropNameInRow="APPROVED" msprop:Generator_UserColumnName="APPROVED" msprop:Generator_ColumnVarNameInTable="columnAPPROVED" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -457,13 +457,13 @@
         <xs:element name="INCDOC" msprop:Generator_RowEvHandlerName="INCDOCRowChangeEventHandler" msprop:Generator_RowDeletedName="INCDOCRowDeleted" msprop:Generator_RowDeletingName="INCDOCRowDeleting" msprop:Generator_RowEvArgName="INCDOCRowChangeEvent" msprop:Generator_TablePropName="INCDOC" msprop:Generator_RowChangedName="INCDOCRowChanged" msprop:Generator_UserTableName="INCDOC" msprop:Generator_RowChangingName="INCDOCRowChanging" msprop:Generator_RowClassName="INCDOCRow" msprop:Generator_TableClassName="INCDOCDataTable" msprop:Generator_TableVarName="tableINCDOC">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:string" minOccurs="0" />
-              <xs:element name="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_UserColumnName="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" type="xs:string" minOccurs="0" />
-              <xs:element name="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_UserColumnName="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" type="xs:string" minOccurs="0" />
-              <xs:element name="Sum1" msprop:Generator_ColumnPropNameInTable="Sum1Column" msprop:Generator_ColumnPropNameInRow="Sum1" msprop:Generator_UserColumnName="Sum1" msprop:Generator_ColumnVarNameInTable="columnSum1" type="xs:string" minOccurs="0" />
-              <xs:element name="Sum2" msprop:Generator_ColumnPropNameInTable="Sum2Column" msprop:Generator_ColumnPropNameInRow="Sum2" msprop:Generator_UserColumnName="Sum2" msprop:Generator_ColumnVarNameInTable="columnSum2" type="xs:string" minOccurs="0" />
-              <xs:element name="Debet" msprop:Generator_ColumnPropNameInTable="DebetColumn" msprop:Generator_ColumnPropNameInRow="Debet" msprop:Generator_UserColumnName="Debet" msprop:Generator_ColumnVarNameInTable="columnDebet" type="xs:string" minOccurs="0" />
-              <xs:element name="Kredit" msprop:Generator_ColumnPropNameInTable="KreditColumn" msprop:Generator_ColumnPropNameInRow="Kredit" msprop:Generator_UserColumnName="Kredit" msprop:Generator_ColumnVarNameInTable="columnKredit" type="xs:string" minOccurs="0" />
+              <xs:element name="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_UserColumnName="Date" msprop:Generator_ColumnVarNameInTable="columnDate" type="xs:string" />
+              <xs:element name="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_UserColumnName="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" type="xs:string" />
+              <xs:element name="Title" msprop:Generator_ColumnPropNameInTable="TitleColumn" msprop:Generator_ColumnPropNameInRow="Title" msprop:Generator_UserColumnName="Title" msprop:Generator_ColumnVarNameInTable="columnTitle" type="xs:string" />
+              <xs:element name="Sum1" msprop:Generator_ColumnPropNameInTable="Sum1Column" msprop:Generator_ColumnPropNameInRow="Sum1" msprop:Generator_UserColumnName="Sum1" msprop:Generator_ColumnVarNameInTable="columnSum1" type="xs:string" />
+              <xs:element name="Sum2" msprop:Generator_ColumnPropNameInTable="Sum2Column" msprop:Generator_ColumnPropNameInRow="Sum2" msprop:Generator_UserColumnName="Sum2" msprop:Generator_ColumnVarNameInTable="columnSum2" type="xs:string" />
+              <xs:element name="Debet" msprop:Generator_ColumnPropNameInTable="DebetColumn" msprop:Generator_ColumnPropNameInRow="Debet" msprop:Generator_UserColumnName="Debet" msprop:Generator_ColumnVarNameInTable="columnDebet" type="xs:string" />
+              <xs:element name="Kredit" msprop:Generator_ColumnPropNameInTable="KreditColumn" msprop:Generator_ColumnPropNameInRow="Kredit" msprop:Generator_UserColumnName="Kredit" msprop:Generator_ColumnVarNameInTable="columnKredit" type="xs:string" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

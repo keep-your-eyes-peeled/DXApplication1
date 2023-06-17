@@ -13,6 +13,7 @@ using System.Diagnostics.Metrics;
 using DevExpress.XtraEditors;
 using System.IO;
 using EasyDox;
+using System.Drawing;
 
 namespace DXApplication1
 {    
@@ -24,6 +25,7 @@ namespace DXApplication1
         public Report Report { get => report; set => report = value; }
 
         public string emplnum =null;
+        string post = null;
         
 
         
@@ -33,7 +35,12 @@ namespace DXApplication1
         public Form1()
         {
             InitializeComponent();
-            
+            //this.Font= new Font("Tahoma", 14, FontStyle.Bold);
+            if(post!="Главный бухгалтер")
+            {
+                textEdit2.Enabled = false;
+            }
+
         }
 
         public ClassLibrary1.Report GetReport()
@@ -359,6 +366,32 @@ namespace DXApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+
+        }
+
+        private void Form1_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
+        {
+            //System.Windows.Forms.Application.Exit();
+            //this.Close();
+            //Process.GetCurrentProcess().Kill();
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(WaitForm1));
+            
+            Form3 form3 = new Form3(textBox1.Text, this.dataSet11.INCDOCS);
+            form3.emplnum = emplnum;
+            form3.ShowDialog();
+            
+            this.dataSet11.INCDOC.Merge(form3.IncDoc);
+            SplashScreenManager.CloseForm();
+            
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
             SplashScreenManager.ShowForm(typeof(WaitForm1));
 
 
@@ -384,13 +417,14 @@ namespace DXApplication1
             DataSet1.REPORTSRow Row = ((DataRowView)bs1.Current).Row
             as DataSet1.REPORTSRow;
 
-            
+
 
             Row.NUM = report.FieldValues["Номер"];
             Row.PATH = $@"D:\Документы\Отчеты\{report.GetReportName()}";
             Row.CREATORENUM = emplnum;
+            Row.APPROVED = false;
 
-            
+
 
 
             this.dataSet11.REPORTS.AddREPORTSRow(((DataSet1.REPORTSRow)((DataRowView)bs1.Current).Row));
@@ -399,27 +433,6 @@ namespace DXApplication1
             this.dataSet11.REPORTS.Update(this.dataSet11.MyOraConnection);
 
             SplashScreenManager.CloseForm();
-
-        }
-
-        private void Form1_FormClosed(object sender, System.Windows.Forms.FormClosedEventArgs e)
-        {
-            //System.Windows.Forms.Application.Exit();
-            //this.Close();
-            //Process.GetCurrentProcess().Kill();
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            SplashScreenManager.ShowForm(typeof(WaitForm1));
-            
-            Form3 form3 = new Form3(textBox1.Text, this.dataSet11.INCDOCS);
-            form3.emplnum = emplnum;
-            form3.ShowDialog();
-            
-            this.dataSet11.INCDOC.Merge(form3.IncDoc);
-            SplashScreenManager.CloseForm();
-            
         }
     }
     
