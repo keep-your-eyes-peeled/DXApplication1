@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,14 @@ namespace DXApplication1
             else
             {
                 this.dataSet11.INCDOCS.Fill(this.dataSet11.MyOraConnection);
+            }
+        }
+
+        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+        {
+            if (e.Column.Name == "colPATH")
+            {
+                Process.Start(e.CellValue.ToString());
             }
         }
     }

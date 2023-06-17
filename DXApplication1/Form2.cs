@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassLibrary1;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,11 +40,15 @@ namespace DXApplication1
         {
             if(post!="Главный бухгалтер" && post != "Бухгалтер")
             {
-                this.dataSet11.REPORTS.FillBy(this.dataSet11.MyOraConnection, emplnum);
+                this.dataSet11.REPORTS.FillBy(this.dataSet11.MyOraConnection, emplnum);                
             }
             else
             {
                 this.dataSet11.REPORTS.Fill(this.dataSet11.MyOraConnection);
+            }
+            if(post!="Главный бухгалтер")
+            {
+                dataSet11.REPORTS.APPROVEDColumn.ReadOnly = true;
             }
         }
 
@@ -53,6 +58,16 @@ namespace DXApplication1
             {
                 Process.Start(e.CellValue.ToString());
             }
+        }
+
+        private void simpleButton1_Click_1(object sender, EventArgs e)
+        {
+            this.dataSet11.REPORTS.Update(this.dataSet11.MyOraConnection);
+        }
+
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            
         }
     }
 }

@@ -37,9 +37,9 @@
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colREPNUM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPATH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCREATORENUM = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colCREATORENUM = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -93,6 +93,7 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             // 
             // colID
             // 
@@ -115,6 +116,14 @@
             this.colPATH.Visible = true;
             this.colPATH.VisibleIndex = 2;
             // 
+            // colCREATORENUM
+            // 
+            this.colCREATORENUM.Caption = "Таб. номер сотрудника";
+            this.colCREATORENUM.FieldName = "CREATORENUM";
+            this.colCREATORENUM.Name = "colCREATORENUM";
+            this.colCREATORENUM.Visible = true;
+            this.colCREATORENUM.VisibleIndex = 0;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -133,14 +142,6 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(780, 430);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
-            // 
-            // colCREATORENUM
-            // 
-            this.colCREATORENUM.Caption = "Таб. номер сотрудника";
-            this.colCREATORENUM.FieldName = "CREATORENUM";
-            this.colCREATORENUM.Name = "colCREATORENUM";
-            this.colCREATORENUM.Visible = true;
-            this.colCREATORENUM.VisibleIndex = 0;
             // 
             // Form4
             // 

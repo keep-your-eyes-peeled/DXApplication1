@@ -857,7 +857,7 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public REPORTSRow AddREPORTSRow(string NUM, string PATH, string CREATORENUM, short APPROVED) {
+            public REPORTSRow AddREPORTSRow(string NUM, string PATH, string CREATORENUM, bool APPROVED) {
                 REPORTSRow rowREPORTSRow = ((REPORTSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -912,7 +912,7 @@ namespace ClassLibrary1 {
                 base.Columns.Add(this.columnPATH);
                 this.columnCREATORENUM = new global::System.Data.DataColumn("CREATORENUM", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCREATORENUM);
-                this.columnAPPROVED = new global::System.Data.DataColumn("APPROVED", typeof(short), null, global::System.Data.MappingType.Element);
+                this.columnAPPROVED = new global::System.Data.DataColumn("APPROVED", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAPPROVED);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
@@ -2201,10 +2201,10 @@ namespace ClassLibrary1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public short APPROVED {
+            public bool APPROVED {
                 get {
                     try {
-                        return ((short)(this[this.tableREPORTS.APPROVEDColumn]));
+                        return ((bool)(this[this.tableREPORTS.APPROVEDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("Значение для столбца \'APPROVED\' в таблице \'REPORTS\' равно DBNull.", e);

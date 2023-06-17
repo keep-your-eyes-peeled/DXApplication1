@@ -422,7 +422,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="APPROVED" msprop:Generator_ColumnPropNameInRow="APPROVED" msprop:Generator_ColumnPropNameInTable="APPROVEDColumn" msprop:Generator_ColumnVarNameInTable="columnAPPROVED" msprop:Generator_UserColumnName="APPROVED" type="xs:short" minOccurs="0" />
+              <xs:element name="APPROVED" msprop:Generator_UserColumnName="APPROVED" msprop:Generator_ColumnPropNameInTable="APPROVEDColumn" msprop:Generator_ColumnPropNameInRow="APPROVED" msprop:Generator_ColumnVarNameInTable="columnAPPROVED" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

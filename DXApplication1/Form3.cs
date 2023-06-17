@@ -43,6 +43,11 @@ namespace DXApplication1
 
         private void simpleButton2_Click(object sender, EventArgs e)
         {
+            if (fileName == null)
+            {
+                MessageBox.Show("Выбирите файл!");
+                return;
+            }
             System.Windows.Forms.BindingSource bs2 = new System.Windows.Forms.BindingSource();
             bs2.DataSource = docs;
             bs2.AddNew();
