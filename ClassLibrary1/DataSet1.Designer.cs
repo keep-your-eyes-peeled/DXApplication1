@@ -919,9 +919,13 @@ namespace ClassLibrary1 {
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = 1;
                 this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
+                this.columnNUM.ReadOnly = true;
                 this.columnNUM.MaxLength = 20;
+                this.columnPATH.ReadOnly = true;
                 this.columnPATH.MaxLength = 200;
+                this.columnCREATORENUM.ReadOnly = true;
                 this.columnCREATORENUM.MaxLength = 100;
             }
             
@@ -1524,12 +1528,16 @@ namespace ClassLibrary1 {
                 base.Columns.Add(this.columnCREATORENUM);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
+                this.columnREPNUM.ReadOnly = true;
                 this.columnREPNUM.MaxLength = 20;
+                this.columnPATH.ReadOnly = true;
                 this.columnPATH.MaxLength = 100;
                 this.columnID.AutoIncrement = true;
                 this.columnID.AutoIncrementSeed = 1;
                 this.columnID.AllowDBNull = false;
+                this.columnID.ReadOnly = true;
                 this.columnID.Unique = true;
+                this.columnCREATORENUM.ReadOnly = true;
                 this.columnCREATORENUM.MaxLength = 100;
             }
             

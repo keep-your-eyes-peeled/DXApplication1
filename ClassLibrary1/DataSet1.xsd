@@ -400,22 +400,22 @@
         <xs:element name="REPORTS" msprop:Generator_RowEvHandlerName="REPORTSRowChangeEventHandler" msprop:Generator_RowDeletedName="REPORTSRowDeleted" msprop:Generator_RowDeletingName="REPORTSRowDeleting" msprop:Generator_RowEvArgName="REPORTSRowChangeEvent" msprop:Generator_TablePropName="REPORTS" msprop:Generator_RowChangedName="REPORTSRowChanged" msprop:Generator_UserTableName="REPORTS" msprop:Generator_RowChangingName="REPORTSRowChanging" msprop:Generator_RowClassName="REPORTSRow" msprop:Generator_TableClassName="REPORTSDataTable" msprop:Generator_TableVarName="tableREPORTS">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:long" />
-              <xs:element name="NUM" msprop:Generator_ColumnPropNameInTable="NUMColumn" msprop:Generator_ColumnPropNameInRow="NUM" msprop:Generator_UserColumnName="NUM" msprop:Generator_ColumnVarNameInTable="columnNUM" minOccurs="0">
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:long" />
+              <xs:element name="NUM" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="NUMColumn" msprop:Generator_ColumnPropNameInRow="NUM" msprop:Generator_UserColumnName="NUM" msprop:Generator_ColumnVarNameInTable="columnNUM" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PATH" msprop:Generator_ColumnPropNameInTable="PATHColumn" msprop:Generator_ColumnPropNameInRow="PATH" msprop:Generator_UserColumnName="PATH" msprop:Generator_ColumnVarNameInTable="columnPATH" minOccurs="0">
+              <xs:element name="PATH" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="PATHColumn" msprop:Generator_ColumnPropNameInRow="PATH" msprop:Generator_UserColumnName="PATH" msprop:Generator_ColumnVarNameInTable="columnPATH" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="200" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CREATORENUM" msprop:Generator_ColumnPropNameInTable="CREATORENUMColumn" msprop:Generator_ColumnPropNameInRow="CREATORENUM" msprop:Generator_UserColumnName="CREATORENUM" msprop:Generator_ColumnVarNameInTable="columnCREATORENUM" minOccurs="0">
+              <xs:element name="CREATORENUM" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="CREATORENUMColumn" msprop:Generator_ColumnPropNameInRow="CREATORENUM" msprop:Generator_UserColumnName="CREATORENUM" msprop:Generator_ColumnVarNameInTable="columnCREATORENUM" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -470,22 +470,22 @@
         <xs:element name="INCDOCS" msprop:Generator_RowEvHandlerName="INCDOCSRowChangeEventHandler" msprop:Generator_RowDeletedName="INCDOCSRowDeleted" msprop:Generator_RowDeletingName="INCDOCSRowDeleting" msprop:Generator_RowEvArgName="INCDOCSRowChangeEvent" msprop:Generator_TablePropName="INCDOCS" msprop:Generator_RowChangedName="INCDOCSRowChanged" msprop:Generator_UserTableName="INCDOCS" msprop:Generator_RowChangingName="INCDOCSRowChanging" msprop:Generator_RowClassName="INCDOCSRow" msprop:Generator_TableClassName="INCDOCSDataTable" msprop:Generator_TableVarName="tableINCDOCS">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="REPNUM" msprop:Generator_ColumnPropNameInTable="REPNUMColumn" msprop:Generator_ColumnPropNameInRow="REPNUM" msprop:Generator_UserColumnName="REPNUM" msprop:Generator_ColumnVarNameInTable="columnREPNUM" minOccurs="0">
+              <xs:element name="REPNUM" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="REPNUMColumn" msprop:Generator_ColumnPropNameInRow="REPNUM" msprop:Generator_UserColumnName="REPNUM" msprop:Generator_ColumnVarNameInTable="columnREPNUM" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PATH" msprop:Generator_ColumnPropNameInTable="PATHColumn" msprop:Generator_ColumnPropNameInRow="PATH" msprop:Generator_UserColumnName="PATH" msprop:Generator_ColumnVarNameInTable="columnPATH" minOccurs="0">
+              <xs:element name="PATH" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="PATHColumn" msprop:Generator_ColumnPropNameInRow="PATH" msprop:Generator_UserColumnName="PATH" msprop:Generator_ColumnVarNameInTable="columnPATH" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:long" />
-              <xs:element name="CREATORENUM" msprop:Generator_ColumnPropNameInTable="CREATORENUMColumn" msprop:Generator_ColumnPropNameInRow="CREATORENUM" msprop:Generator_UserColumnName="CREATORENUM" msprop:Generator_ColumnVarNameInTable="columnCREATORENUM" minOccurs="0">
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_UserColumnName="ID" msprop:Generator_ColumnVarNameInTable="columnID" type="xs:long" />
+              <xs:element name="CREATORENUM" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="CREATORENUMColumn" msprop:Generator_ColumnPropNameInRow="CREATORENUM" msprop:Generator_UserColumnName="CREATORENUM" msprop:Generator_ColumnVarNameInTable="columnCREATORENUM" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
