@@ -26,31 +26,38 @@ namespace DXApplication1
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
-        {        
-            if (textEdit1.Text.Length == 0 || textEdit2.Text.Length == 0)
+        {
+            try
             {
-                MessageBox.Show("Введите данные для авторизации!");
-            }
-            else
-            {
-                this.dataSet11.SetOracleConnectionString();
-                string hesh = this.dataSet11.GetStringHashSum(textEdit1.Text, textEdit2.Text);
-                OracleConnection myOraConnection= this.dataSet11.MyOraConnection;
-                string post = this.dataSet11.USERS.FillBy(this.dataSet11.MyOraConnection, hesh);
-                string emplnum = this.dataSet11.USERS.FindENUM(myOraConnection, hesh);
-                switch (this.dataSet11.USERS.FindByHash(myOraConnection, hesh))
+                if (textEdit1.Text.Length == 0 || textEdit2.Text.Length == 0)
                 {
-                    case true:
-                        Glavn glavn = new Glavn();
-                        glavn.post = post;
-                        glavn.emplnum = emplnum;
-                        glavn.Show();
-                        this.Hide();
-                        break;
-                    case false:
-                        MessageBox.Show("Ошибка авторизации!");
-                        break;
+                    MessageBox.Show("Введите данные для авторизации!");
                 }
+                else
+                {
+                    this.dataSet11.SetOracleConnectionString();
+                    string hesh = this.dataSet11.GetStringHashSum(textEdit1.Text, textEdit2.Text);
+                    OracleConnection myOraConnection = this.dataSet11.MyOraConnection;
+                    string post = this.dataSet11.USERS.FillBy(this.dataSet11.MyOraConnection, hesh);                    
+                    string emplnum = this.dataSet11.USERS.FindENUM(myOraConnection, hesh);
+                    switch (this.dataSet11.USERS.FindByHash(myOraConnection, hesh))
+                    {
+                        case true:
+                            Glavn glavn = new Glavn(post);
+                            glavn.post = post;
+                            glavn.emplnum = emplnum;
+                            glavn.Show();
+                            this.Hide();
+                            break;
+                        case false:
+                            MessageBox.Show("Ошибка авторизации!");
+                            break;
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка авторизации!");
             }
         }
 

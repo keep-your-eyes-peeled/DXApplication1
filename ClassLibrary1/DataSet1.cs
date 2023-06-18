@@ -158,7 +158,15 @@ namespace ClassLibrary1
             {
                 using (DataSet1TableAdapters.USERSTableAdapter ta = new DataSet1TableAdapters.USERSTableAdapter())
                 {
-                    return ta.ScalarQuery1(hashSum).ToString();
+                    object str = ta.ScalarQuery1(hashSum);
+                    if (str != null)
+                    {
+                        return str.ToString();
+                    }
+                    else
+                    {
+                        return null;
+                    }
                 }
             }
 

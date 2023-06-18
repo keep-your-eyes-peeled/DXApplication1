@@ -78,7 +78,7 @@ namespace DXApplication1
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(12, 416);
+            this.simpleButton1.Location = new System.Drawing.Point(638, 416);
             this.simpleButton1.MaximumSize = new System.Drawing.Size(150, 22);
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(150, 22);
@@ -204,7 +204,7 @@ namespace DXApplication1
             // 
             // layoutControlItem2
             // 
-            this.layoutControlItem2.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.layoutControlItem2.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem2.ContentVertAlignment = DevExpress.Utils.VertAlignment.Center;
             this.layoutControlItem2.Control = this.simpleButton1;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 404);

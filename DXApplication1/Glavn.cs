@@ -33,10 +33,11 @@ namespace DXApplication1
         ClassLibrary1.Report report=new ClassLibrary1.Report(new Dictionary<string, string>());
         private int counter = 1;
         public int Counter { get => counter; set => counter = value; }
-        public Glavn()
+        public Glavn(string _post)
         {
             SplashScreenManager.ShowForm(typeof(WaitForm1));            
             InitializeComponent();
+            post = _post;
             SplashScreenManager.CloseForm();
             //this.Font = new System.Drawing.Font("Tahoma", 14, FontStyle.Bold);
         }
@@ -94,6 +95,7 @@ namespace DXApplication1
             SplashScreenManager.ShowForm(typeof(WaitForm1));
             form1 = new Form1();
             form1.Text = "Отчет " + Counter++;
+            form1.post = post;
             form1.MdiParent = this;
             form1.emplnum = emplnum;
             form1.Show();

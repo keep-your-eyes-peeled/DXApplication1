@@ -25,7 +25,7 @@ namespace DXApplication1
         public Report Report { get => report; set => report = value; }
 
         public string emplnum =null;
-        string post = null;
+        public string post = null;
         
 
         
@@ -35,12 +35,6 @@ namespace DXApplication1
         public Form1()
         {
             InitializeComponent();
-            //this.Font= new Font("Tahoma", 14, FontStyle.Bold);
-            if(post!="Главный бухгалтер")
-            {
-                textEdit2.Enabled = false;
-            }
-
         }
 
         public ClassLibrary1.Report GetReport()
@@ -360,8 +354,11 @@ namespace DXApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //textBox2.Text = report.FieldValues["ТабНом"];
-            //fieldValues["Тысячи"] = Worksheet.Range["AV11"].Value.ToString();
+            if (post == "Главный бухгалтер")
+            {
+                textEdit2.Enabled = true;
+                layoutControlItem9.Enabled = true;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

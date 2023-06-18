@@ -325,6 +325,7 @@
             // textEdit2
             // 
             this.textEdit2.EditValue = new System.DateTime(2023, 1, 1, 0, 1, 24, 0);
+            this.textEdit2.Enabled = false;
             this.textEdit2.Location = new System.Drawing.Point(601, 36);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
@@ -478,6 +479,7 @@
             // layoutControlItem9
             // 
             this.layoutControlItem9.Control = this.textEdit2;
+            this.layoutControlItem9.Enabled = false;
             this.layoutControlItem9.Location = new System.Drawing.Point(452, 24);
             this.layoutControlItem9.Name = "layoutControlItem9";
             this.layoutControlItem9.Size = new System.Drawing.Size(452, 24);
