@@ -53,10 +53,6 @@ namespace DXApplication1
             var engine = new Engine();
             engine.Merge("Report_temp.docx", report.FieldValues, "Report_out.docx");
             SplashScreenManager.CloseForm();
-            
-            //Process.Start("Report_out.docx");
-            /*engine.Merge(@"D:\work\Диплом\Документы\Report_temp.docx", report.FieldValues, @"D:\work\Диплом\Документы\Report_out.docx");
-            Process.Start(@"D:\work\Диплом\Документы\Report_out.docx");*/
         }
 
         private void barButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -82,8 +78,7 @@ namespace DXApplication1
             ((Microsoft.Office.Interop.Word._Document)doc).Close(WdSaveOptions.wdSaveChanges, ref oMissing, ref oMissing);
             ((Microsoft.Office.Interop.Word._Application)word).Quit(ref oMissing, ref oMissing, ref oMissing);
             word = null;
-            SplashScreenManager.CloseForm();
-            
+            SplashScreenManager.CloseForm();            
         }
 
         private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

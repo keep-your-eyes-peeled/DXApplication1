@@ -393,16 +393,17 @@ namespace DXApplication1
         private void simpleButton2_Click(object sender, EventArgs e)
         {
             SplashScreenManager.ShowForm(typeof(WaitForm1));
-
-
-
+            if (bindingSource1.Count == 0)
+            {
+                MessageBox.Show("Вы не внесли входящие документы!");
+                return;
+            }
             GetReport();
             var engine = new Engine();
             engine.Merge("Report_temp.docx", report.FieldValues, "Report_out.docx");
             System.Windows.Forms.BindingSource bs1 = new System.Windows.Forms.BindingSource();
             bs1.DataSource = this.dataSet11.REPORTS;
             bs1.AddNew();
-
             if (File.Exists($@"D:\Документы\Отчеты\{report.GetReportName()}") == false)
             {
                 File.Copy("Report_out.docx", $@"D:\Документы\Отчеты\{report.GetReportName()}");
@@ -413,25 +414,17 @@ namespace DXApplication1
                 File.Copy("Report_out.docx", $@"D:\Документы\Отчеты\(copy{new Random().Next(1, 100000)}){report.GetReportName()}");
                 File.Delete("Report_out.docx");
             }
-
             DataSet1.REPORTSRow Row = ((DataRowView)bs1.Current).Row
             as DataSet1.REPORTSRow;
-
-
-
             Row.NUM = report.FieldValues["Номер"];
             Row.PATH = $@"D:\Документы\Отчеты\{report.GetReportName()}";
             Row.CREATORENUM = emplnum;
             Row.APPROVED = false;
-
-
-
-
             this.dataSet11.REPORTS.AddREPORTSRow(((DataSet1.REPORTSRow)((DataRowView)bs1.Current).Row));
             bs1.EndEdit();
             this.dataSet11.INCDOCS.Update(this.dataSet11.MyOraConnection);
             this.dataSet11.REPORTS.Update(this.dataSet11.MyOraConnection);
-
+            this.Close();
             SplashScreenManager.CloseForm();
         }
     }

@@ -26,9 +26,7 @@ namespace DXApplication1
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            
-            
+        {        
             if (textEdit1.Text.Length == 0 || textEdit2.Text.Length == 0)
             {
                 MessageBox.Show("Введите данные для авторизации!");
